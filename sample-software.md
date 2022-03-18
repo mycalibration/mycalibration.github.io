@@ -1,26 +1,6 @@
-# Welcome to myCalibration documentation
-
-## 1) Overview
-
-
-## 2) Web App
-
-
-## 3) Web API
-
-
-## 4) The JSON Schema
-
-
-## 5) Sample Software
-
-
-
-
-
-You can use the [editor on GitHub](https://github.com/mycalibration/mycalibration.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+layout: page
+title: "Software Samples"
+permalink: /sample-software/
 
 ### Markdown
 
