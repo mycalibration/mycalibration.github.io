@@ -1,4 +1,4 @@
-# Welcome to myCalibration documentation
+# myCalibration documentation
 
 ## 1) Overview
 
@@ -15,7 +15,7 @@
 ## 5) Sample Software
 
 
-
+Test: [About](https://myCalibration.github.io/about)
 
 
 You can use the [editor on GitHub](https://github.com/mycalibration/mycalibration.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
