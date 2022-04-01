@@ -1,10 +1,10 @@
 theme: jekyll-theme-slate
-title: Hello
+title: myCalibration Documentation Page
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "myCalibration Documentation Page"
 title_separator          : "-"
 name                     : &name "KELLER AG"
-description              : &description "personal description"
+description              : &description "The platform for your KELLER sensor calibration data"
 url                      : https://mycalibration.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 #repository               : "academicpages/academicpages.github.io"

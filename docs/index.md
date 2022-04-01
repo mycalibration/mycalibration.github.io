@@ -1,4 +1,13 @@
-# myCalibration documentation
+Table of Contents
+=================
+
+ * [Overview](#1-overview)
+ * [Web App](#2-web-app)
+ * [Web API](#3-web-api)
+ * [The JSON Schema](#4-the-json-schema)
+ * [Sample Software](#5-sample-software)
+
+---
 
 ## 1) Overview
 
