@@ -1,3 +1,5 @@
+![KELLER myCalibration Logo](./media/KELLER_Logo_myCalibration.png?raw=true "logo")
+
 Table of Contents
 =================
 
@@ -21,26 +23,57 @@ Calibration data is available in JSON file format. Thanks to its widespread use 
 The structure of the JSON file is defined in a JSON schema. This schema is made publicly available, allowing a full integration in customer software.
 
 ### Access
-#### User interface
+#### Web App
 A user interface that is accessible over any standard web browser gives customers access to calibration data of their sensors. Customer data is only accessible after an individual login and cannot be seen by others.
 After using various search and filter functionalities, the user can download calibration data of individually selected sensors or perform a bulk download of multiple datasets.
-#### API
+#### Web API
 A REST API is available for automated access. Customers can integrate this API into their processes. This allows them e.g. to automatically download the calibration data of newly received sensors and integrate this into their production processes.
 
 
 ## 2) Web App
+The web app is here: [https://sensweb.azurewebsites.net/](https://sensweb.azurewebsites.net)
+
+![Web App UI](./media/web-app-example.png?raw=true)
+
+There is a free demo user account with the user name 'demo1234' and the password 'demo1234'.
+
+### Sign Up & Sign In
+Signing up a user account can be done with the help of engineering@keller-druck.com
+There is already a free demo account  'demo1234' with the password 'demo1234' to see some demo data-
+![login example](./media/login-demo1234.png?raw=true)
 
 
 ## 3) Web API
+The Web API's URL is https://senswebapi.azurewebsites.net/
 
+The OpenAPI specification page is: [https://senswebapi.azurewebsites.net/swagger/index.html](https://senswebapi.azurewebsites.net/swagger/index.html)
+
+All the calibration data can be exported as
+- JSON meta-information (header only) 
+- zip file with the filtered and compressed JSON files (header+data)
+- brotli file with the filtered and compressed JSON files (header+data)
+
+swagger json: https://senswebapi.azurewebsites.net/swagger/v1/swagger.json
+
+### Filter possibilities
+
+
+
+### Generate client SW using the OpenAPI/swagger schema. 
+https://editor.swagger.io/
 
 ## 4) The JSON Schema
 
 
 ## 5) Sample Software
+todo
 
-
-
+Github repo:
+/docs
+/json-schema
+/samples
+ - json-schema -> C# classes
+ - Web API access sample C#
 
 
 
