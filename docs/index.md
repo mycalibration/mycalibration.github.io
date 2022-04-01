@@ -1,15 +1,31 @@
 Table of Contents
 =================
 
- * [Overview](#1-overview)
- * [Web App](#2-web-app)
- * [Web API](#3-web-api)
- * [The JSON Schema](#4-the-json-schema)
- * [Sample Software](#5-sample-software)
+ * [1) Overview](#1-overview)
+ * [2) Web App](#2-web-app)
+ * [3) Web API](#3-web-api)
+ * [4) The JSON Schema](#4-the-json-schema)
+ * [5) Sample Software](#5-sample-software)
 
 ---
 
 ## 1) Overview
+'KELLER myCalibration' is a service for KELLER customers. Via KELLER myCalibration, customers can access digital calibration data of their KELLER sensors.
+
+### Data
+#### Contents
+myCalibration is designed with data from various KELLER transducers and transmitters in mind. As an example, it can be used to hold information of Mathematical Compensation Models as well as X-line transmitter calibration data.
+#### Format
+Calibration data is available in JSON file format. Thanks to its widespread use and a broad availability of programming libraries, this format allows for an easy and quick integration in customer software. What is more, as a quick check, JSON data can be inspected in any text editor.
+#### Structure
+The structure of the JSON file is defined in a JSON schema. This schema is made publicly available, allowing a full integration in customer software.
+
+### Access
+#### User interface
+A user interface that is accessible over any standard web browser gives customers access to calibration data of their sensors. Customer data is only accessible after an individual login and cannot be seen by others.
+After using various search and filter functionalities, the user can download calibration data of individually selected sensors or perform a bulk download of multiple datasets.
+#### API
+A REST API is available for automated access. Customers can integrate this API into their processes. This allows them e.g. to automatically download the calibration data of newly received sensors and integrate this into their production processes.
 
 
 ## 2) Web App
@@ -24,14 +40,16 @@ Table of Contents
 ## 5) Sample Software
 
 
-Test: [About](https://myCalibration.github.io/about)
 
 
-You can use the [editor on GitHub](https://github.com/mycalibration/mycalibration.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
+---
+---
+---
 ### Markdown
+
+Test: [About](https://myCalibration.github.io/about)
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
@@ -52,13 +70,3 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mycalibration/mycalibration.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
