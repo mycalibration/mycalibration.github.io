@@ -93,8 +93,8 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| CompensatedPressureRange | object | - Pressure range of the mathematical compensation model<br /> - Range of physical quantities consisting of a minimum and maximum magnitude and a unit of  measurement<br /> - Temperature range of the mathematical compensation model<br /> - Pressure range over which the sensors characteristics have been compensated<br /> - Temperature range over which the sensors characteristics have been compensated | No |
-| CompensatedTemperatureRange | object | Pressure range of the mathematical compensation model                Range of physical quantities consisting of a minimum and maximum magnitude and a unit of  measurement                Temperature range of the mathematical compensation model                Pressure range over which the sensors characteristics have been compensated                Temperature range over which the sensors characteristics have been compensated | No |
+| CompensatedPressureRange | object | - Range of physical quantities consisting of a minimum and maximum magnitude and a unit of  measurement<br /> - Pressure range of the mathematical compensation model<br /> - Pressure range over which the sensors characteristics have been compensated | No |
+| CompensatedTemperatureRange | object | - Range of physical quantities consisting of a minimum and maximum magnitude and a unit of measurement<br /> - Temperature range of the mathematical compensation model<br /> - Temperature range over which the sensors characteristics have been compensated | No |
 | CreationDate | string | File creation date | No |
 | CustomerName | string | Customer name | No |
 | CustomerNumber | integer | KELLER customer identification number | No |
@@ -119,7 +119,6 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 | fileType | query  |             | No       | integer |
 | IncludedIds | query | If null: Either are 'ALL SELECTED' or some are unselected (and listed in ExcludedIds)<br />  If not null: None are selected except those that are listed here.<br />  It is not allowed to have IncludedIds AND ExcludedIds have listed values. One most be null or both most be null.<br />  The list of included ids is limited to 50. More than 50 will throw an exception.<br /> | No | [ string ] |
 | ExcludedIds | query | If null: Either are 'ALL SELECTED' or only some few are selected (and listed in IncludedIds)<br />  If not null: All are selected and except those that are listed here.<br />  It is not allowed to have IncludedIds AND ExcludedIds have listed values. One most be null or both most be null.<br />  The list of excluded ids is limited to 50. More than 50 will throw an exception.<br /> | No | [ string ] |
-
 | OrderNumbers | query | List of Order Numbers | No | [ string ] |
 | OrderPositions | query | List of Order Positions | No | [ string ] |
 | DateFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange'.<br />  When 'inRange' then 'DateTo' is needed.<br />  Example 1:<br />  "All data newer than August 1st" = <https://senswebapi.azurewebsites.net/v1/CalibrationData?DateFilterType=greaterThan&Date=2021-08-01><br />  Example 2:<br />  "All data from the year 2020" = <https://senswebapi.azurewebsites.net/v1/CalibrationData?DateFilterType=inRange&Date=2021-01-01&DateTo=2021-12-31> <br />  Example 3:<br />  "All data from the first day in January and February" = <https://senswebapi.azurewebsites.net/v1/CalibrationData?DateFilterType=equals&Date=2021-01-01&Date=2021-02-01> <br /> | No | string |
