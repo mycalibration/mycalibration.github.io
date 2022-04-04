@@ -110,6 +110,7 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 | SerialNumber | string | KELLER product serial number | No |
 
 ### Filter parameters
+
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
 | fileType | query |  | No | integer |
