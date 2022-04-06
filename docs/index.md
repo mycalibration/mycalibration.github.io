@@ -239,7 +239,7 @@ The schema can be downloaded as [JSON Schema here].
     <td class="tg-0lax">KELLER purchase order&nbsp;&nbsp;&nbsp;number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">int</td>
-    <td class="tg-0lax">377144</td>
+    <td class="tg-0lax">9990016</td>
   </tr>
   <tr>
     <td class="tg-0lax">orderPosition&nbsp;&nbsp;&nbsp;*</td>
@@ -253,7 +253,7 @@ The schema can be downloaded as [JSON Schema here].
     <td class="tg-0lax">Customer internal product&nbsp;&nbsp;&nbsp;type</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"5700033227"</td>
+    <td class="tg-0lax">"9990016-123"</td>
   </tr>
   <tr>
     <td class="tg-0lax">pressureType&nbsp;&nbsp;&nbsp;*</td>
@@ -267,21 +267,21 @@ The schema can be downloaded as [JSON Schema here].
     <td class="tg-0lax">KELLER product series</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"17SHX"</td>
+    <td class="tg-0lax">"33X"</td>
   </tr>
   <tr>
     <td class="tg-0lax">productType&nbsp;&nbsp;&nbsp;*</td>
     <td class="tg-0lax">KELLER product type</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"PAA-17SHX"</td>
+    <td class="tg-0lax">"PAA-33X"</td>
   </tr>
   <tr>
     <td class="tg-0lax">productNumber&nbsp;&nbsp;&nbsp;*</td>
     <td class="tg-0lax">KELLER product number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"231745.0002"</td>
+    <td class="tg-0lax">"1234567.0001"</td>
   </tr>
   <tr>
     <td class="tg-0lax">serialNumber&nbsp;&nbsp;&nbsp;*</td>
@@ -324,7 +324,7 @@ The schema can be downloaded as [JSON Schema here].
     <td class="tg-0lax">Customer internal reference&nbsp;&nbsp;&nbsp;number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"Kristen&nbsp;&nbsp;&nbsp;Bartlett"</td>
+    <td class="tg-0lax">"Jane&nbsp;&nbsp;&nbsp;Doe"</td>
   </tr>
   <tr>
     <td class="tg-0lax">remarks&nbsp;&nbsp;&nbsp;*</td>
@@ -338,14 +338,14 @@ The schema can be downloaded as [JSON Schema here].
     <td class="tg-0lax">Customer name</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"KELLER America"</td>
+    <td class="tg-0lax">"DemoData Inc."</td>
   </tr>
   <tr>
     <td class="tg-0lax">customerNumber&nbsp;&nbsp;&nbsp;*</td>
     <td class="tg-0lax">KELLER customer&nbsp;&nbsp;&nbsp;identification number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"PO123456 Rev. 1"</td>
+    <td class="tg-0lax">"9990016 Rev. 2"</td>
   </tr>
   <tr>
     <td class="tg-0lax">customerOrderNumber&nbsp;&nbsp;&nbsp;*</td>
