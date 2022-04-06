@@ -207,16 +207,16 @@ The schema can be downloaded as [JSON Schema here].
   <tr>
     <td class="tg-0lax">version *</td>
     <td class="tg-0lax"> </td>
-    <td class="tg-0lax">Version&nbsp;&nbsp;&nbsp;of the corresponding JSON Schema</td>
-    <td class="tg-0lax">Version&nbsp;&nbsp;&nbsp;for the schema with semantic versioning (MAJOR.MINOR.PATCH)</td>
+    <td class="tg-0lax">Version&nbsp;of the corresponding JSON Schema</td>
+    <td class="tg-0lax">Version&nbsp;for the schema with semantic versioning (MAJOR.MINOR.PATCH)</td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"1.0.0"</td>
   </tr>
   <tr>
-    <td class="tg-0lax" rowspan="23">header&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax" rowspan="23">header&nbsp;*</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">Header data</td>
-    <td class="tg-0lax">Meta-information&nbsp;&nbsp;&nbsp;to identify and catalogize the calibration data stored in measurements</td>
+    <td class="tg-0lax">Meta-information&nbsp;to identify and catalogize the calibration data stored in measurements</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax"> </td>
   </tr>
@@ -228,88 +228,88 @@ The schema can be downloaded as [JSON Schema here].
     <td class="tg-0lax">"2022-03-22"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">orderTargetDispatchDate&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Targeted&nbsp;&nbsp;&nbsp;dispatch date of the order</td>
+    <td class="tg-0lax">orderTargetDispatchDate&nbsp;*</td>
+    <td class="tg-0lax">Targeted&nbsp;dispatch date of the order</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"2022-03-15"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">orderNumber&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">KELLER purchase order&nbsp;&nbsp;&nbsp;number</td>
+    <td class="tg-0lax">orderNumber&nbsp;*</td>
+    <td class="tg-0lax">KELLER purchase order&nbsp;number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">int</td>
     <td class="tg-0lax">9990016</td>
   </tr>
   <tr>
-    <td class="tg-0lax">orderPosition&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">KELLER purchase order&nbsp;&nbsp;&nbsp;position</td>
+    <td class="tg-0lax">orderPosition&nbsp;*</td>
+    <td class="tg-0lax">KELLER purchase order&nbsp;position</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">int</td>
     <td class="tg-0lax">3</td>
   </tr>
   <tr>
-    <td class="tg-0lax">customerProductType&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Customer internal product&nbsp;&nbsp;&nbsp;type</td>
+    <td class="tg-0lax">customerProductType&nbsp;*</td>
+    <td class="tg-0lax">Customer internal product&nbsp;type</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"9990016-123"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">pressureType&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax">pressureType&nbsp;*</td>
     <td class="tg-0lax">Pressure type</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"PAA"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">productSeries&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax">productSeries&nbsp;*</td>
     <td class="tg-0lax">KELLER product series</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"33X"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">productType&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax">productType&nbsp;*</td>
     <td class="tg-0lax">KELLER product type</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"PAA-33X"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">productNumber&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax">productNumber&nbsp;*</td>
     <td class="tg-0lax">KELLER product number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"1234567.0001"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">serialNumber&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">KELLER product serial&nbsp;&nbsp;&nbsp;number</td>
+    <td class="tg-0lax">serialNumber&nbsp;*</td>
+    <td class="tg-0lax">KELLER product serial&nbsp;number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"I123456"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">compensatedPressureRange&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Pressure&nbsp;&nbsp;&nbsp;range over which the sensors characteristics have been compensated</td>
+    <td class="tg-0lax">compensatedPressureRange&nbsp;*</td>
+    <td class="tg-0lax">Pressure&nbsp;range over which the sensors characteristics have been compensated</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">{"max":&nbsp;&nbsp;&nbsp;1.0,"min": 0.0,"unit": "bar"}</td>
+    <td class="tg-0lax">{"max":&nbsp;1.0,"min": 0.0,"unit": "bar"}</td>
   </tr>
   <tr>
-    <td class="tg-0lax">compensatedTemperatureRange&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Temperature&nbsp;&nbsp;&nbsp;range over which the sensors characteristics have been compensated</td>
+    <td class="tg-0lax">compensatedTemperatureRange&nbsp;*</td>
+    <td class="tg-0lax">Temperature&nbsp;range over which the sensors characteristics have been compensated</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">{"max":&nbsp;&nbsp;&nbsp;70.0,  "min": 15.0, "unit": "°C"}</td>
+    <td class="tg-0lax">{"max":&nbsp;70.0,  "min": 15.0, "unit": "°C"}</td>
   </tr>
   <tr>
-    <td class="tg-0lax" rowspan="5">electricSupply&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax" rowspan="5">electricSupply&nbsp;*</td>
     <td class="tg-0lax" rowspan="5">Nominal electric supply</td>
     <td class="tg-0lax" rowspan="5"> <br><br><br><br></td>
     <td class="tg-0lax" rowspan="5">object</td>
-    <td class="tg-0lax" rowspan="5">{"unit":&nbsp;&nbsp;&nbsp;"V","max": 24.0,"min": 4.5} or&nbsp;&nbsp;&nbsp;{"unit": "mA","magnitude": 1.0}</td>
+    <td class="tg-0lax" rowspan="5">{"unit":&nbsp;"V","max": 24.0,"min": 4.5} or&nbsp;{"unit": "mA","magnitude": 1.0}</td>
   </tr>
   <tr>
   </tr>
@@ -320,36 +320,36 @@ The schema can be downloaded as [JSON Schema here].
   <tr>
   </tr>
   <tr>
-    <td class="tg-0lax">customerReferenceNumber&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Customer internal reference&nbsp;&nbsp;&nbsp;number</td>
+    <td class="tg-0lax">customerReferenceNumber&nbsp;*</td>
+    <td class="tg-0lax">Customer internal reference&nbsp;number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
-    <td class="tg-0lax">"Jane&nbsp;&nbsp;&nbsp;Doe"</td>
+    <td class="tg-0lax">"Jane&nbsp;Doe"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">remarks&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax">remarks&nbsp;*</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">""</td>
   </tr>
   <tr>
-    <td class="tg-0lax">customerName&nbsp;&nbsp;&nbsp;*</td>
+    <td class="tg-0lax">customerName&nbsp;*</td>
     <td class="tg-0lax">Customer name</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"DemoData Inc."</td>
   </tr>
   <tr>
-    <td class="tg-0lax">customerNumber&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">KELLER customer&nbsp;&nbsp;&nbsp;identification number</td>
+    <td class="tg-0lax">customerNumber&nbsp;*</td>
+    <td class="tg-0lax">KELLER customer&nbsp;identification number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"9990016 Rev. 2"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">customerOrderNumber&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Customer&nbsp;&nbsp;&nbsp;internal purchase order number</td>
+    <td class="tg-0lax">customerOrderNumber&nbsp;*</td>
+    <td class="tg-0lax">Customer&nbsp;internal purchase order number</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">"123456700012"</td>
@@ -357,45 +357,45 @@ The schema can be downloaded as [JSON Schema here].
   <tr>
     <td class="tg-0lax" rowspan="27">measurements[] *</td>
     <td class="tg-0lax"> </td>
-    <td class="tg-0lax">Array&nbsp;&nbsp;&nbsp;of individual measurements. Item order corresponds to order in measurement&nbsp;&nbsp;&nbsp;sequence.</td>
+    <td class="tg-0lax">Array&nbsp;of individual measurements. Item order corresponds to order in measurement&nbsp;sequence.</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">Array of Measurement</td>
     <td class="tg-0lax"> </td>
   </tr>
   <tr>
     <td class="tg-0lax">reference *</td>
-    <td class="tg-0lax">KELLER&nbsp;&nbsp;&nbsp;reference to original measurement data</td>
+    <td class="tg-0lax">KELLER&nbsp;reference to original measurement data</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">string</td>
     <td class="tg-0lax">"TSX_ABCD567P89"</td>
   </tr>
   <tr>
-    <td class="tg-0lax">environment&nbsp;&nbsp;&nbsp;*</td>
-    <td class="tg-0lax">Real&nbsp;&nbsp;&nbsp;conditions of the measurement point environment</td>
+    <td class="tg-0lax">environment&nbsp;*</td>
+    <td class="tg-0lax">Real&nbsp;conditions of the measurement point environment</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "pressure": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "magnitude": 0.1000031,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "unit": "bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "temperature": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "magnitude": 14.6304,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "unit": "°C"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "barometer": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "magnitude": 0.970963,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "unit": "bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;    "pressure": {<br>&nbsp;&nbsp;&nbsp;        "magnitude": 0.1000031,<br>&nbsp;&nbsp;&nbsp;        "unit": "bar"<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "temperature": {<br>&nbsp;&nbsp;&nbsp;        "magnitude": 14.6304,<br>&nbsp;&nbsp;&nbsp;        "unit": "°C"<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "barometer": {<br>&nbsp;&nbsp;&nbsp;        "magnitude": 0.970963,<br>&nbsp;&nbsp;&nbsp;        "unit": "bar"<br>&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
   <tr>
     <td class="tg-0lax">environmentTarget</td>
-    <td class="tg-0lax">Target&nbsp;&nbsp;&nbsp;conditions of the measurement point environment</td>
+    <td class="tg-0lax">Target&nbsp;conditions of the measurement point environment</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "pressure": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "magnitude": 0.1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "unit": "bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "temperature": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "magnitude": 15,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "unit": "°C"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;    "pressure": {<br>&nbsp;&nbsp;&nbsp;        "magnitude": 0.1,<br>&nbsp;&nbsp;&nbsp;        "unit": "bar"<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "temperature": {<br>&nbsp;&nbsp;&nbsp;        "magnitude": 15,<br>&nbsp;&nbsp;&nbsp;        "unit": "°C"<br>&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
   <tr>
     <td class="tg-0lax">raw</td>
     <td class="tg-0lax">Raw measurement values</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "bridgeResistance": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;"magnitude": 3391.10116554,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;"unit": "Ohm"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "signal": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       &nbsp;&nbsp;&nbsp;"magnitude": 24.238461872,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "unit":&nbsp;&nbsp;&nbsp;"mV"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;    "bridgeResistance": {<br>&nbsp;&nbsp;&nbsp;       &nbsp;"magnitude": 3391.10116554,<br>&nbsp;&nbsp;&nbsp;       &nbsp;"unit": "Ohm"<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "signal": {<br>&nbsp;&nbsp;&nbsp;       &nbsp;"magnitude": 24.238461872,<br>&nbsp;&nbsp;&nbsp;        "unit":&nbsp;"mV"<br>&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
   <tr>
     <td class="tg-0lax" rowspan="22">compensated</td>
-    <td class="tg-0lax" rowspan="22">Compensated&nbsp;&nbsp;&nbsp;measurement data by different compensation methods</td>
+    <td class="tg-0lax" rowspan="22">Compensated&nbsp;measurement data by different compensation methods</td>
     <td class="tg-0lax" rowspan="22"> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></td>
     <td class="tg-0lax" rowspan="22">object</td>
-    <td class="tg-0lax" rowspan="22">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "compensationCircuitOutputs": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "P1": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "measuredValue":&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;               &nbsp;&nbsp;&nbsp;"magnitude": 0.03000106,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                "unit":&nbsp;&nbsp;&nbsp;"bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "nominalValue":&nbsp;&nbsp;&nbsp;"magnitude": 0.02999711,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "unit":&nbsp;&nbsp;&nbsp;"bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "TOB1": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "measuredValue": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "magnitude":&nbsp;&nbsp;&nbsp;14.59302,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "unit":&nbsp;&nbsp;&nbsp;"°C"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "nominalValue": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "magnitude":&nbsp;&nbsp;&nbsp;14.6313,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "unit":&nbsp;&nbsp;&nbsp;"°C"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax" rowspan="22">{<br>&nbsp;&nbsp;&nbsp;    "compensationCircuitOutputs": {<br>&nbsp;&nbsp;&nbsp;        "P1": {<br>&nbsp;&nbsp;&nbsp;            "measuredValue":&nbsp;{<br>&nbsp;&nbsp;&nbsp;               &nbsp;"magnitude": 0.03000106,<br>&nbsp;&nbsp;&nbsp;                "unit":&nbsp;"bar"<br>&nbsp;&nbsp;&nbsp;            },<br>&nbsp;&nbsp;&nbsp;            "nominalValue":&nbsp;"magnitude": 0.02999711,<br>&nbsp;&nbsp;&nbsp;            "unit":&nbsp;"bar"<br>&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "TOB1": {<br>&nbsp;&nbsp;&nbsp;        "measuredValue": {<br>&nbsp;&nbsp;&nbsp;            "magnitude":&nbsp;14.59302,<br>&nbsp;&nbsp;&nbsp;            "unit":&nbsp;"°C"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "nominalValue": {<br>&nbsp;&nbsp;&nbsp;            "magnitude":&nbsp;14.6313,<br>&nbsp;&nbsp;&nbsp;            "unit":&nbsp;"°C"<br>&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
   <tr>
   </tr>
@@ -442,24 +442,24 @@ The schema can be downloaded as [JSON Schema here].
   <tr>
     <td class="tg-0lax" rowspan="3">compensationMethods</td>
     <td class="tg-0lax"> </td>
-    <td class="tg-0lax">Information on different&nbsp;&nbsp;&nbsp;compensation methods</td>
+    <td class="tg-0lax">Information on different&nbsp;compensation methods</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax"> </td>
   </tr>
   <tr>
     <td class="tg-0lax">mathematicalModel</td>
-    <td class="tg-0lax">A mathematical compensation&nbsp;&nbsp;&nbsp;model</td>
+    <td class="tg-0lax">A mathematical compensation&nbsp;model</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "MM0324": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "compensatedPressureRange": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "max": 0.35,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "min": 0.03,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "unit":&nbsp;&nbsp;&nbsp;"bar"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "compensatedTemperatureRange":&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "max": 80.0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "min": -10.0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "unit":&nbsp;&nbsp;&nbsp;"°C"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "electricSupply": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "magnitude": 1.0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "unit":&nbsp;&nbsp;&nbsp;"mA"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "modelType":&nbsp;&nbsp;&nbsp;"MM0324",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "parts": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "pressure": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           &nbsp;&nbsp;&nbsp;    "coefficients": [[1.8578428692012365,&nbsp;&nbsp;&nbsp;-0.0017637338444390805, 6.089070597524738E-07, -9.469256273591509E-11,&nbsp;&nbsp;&nbsp;5.4899128873639585E-15],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [-0.0972735455799812, 0.00010464739112826799,&nbsp;&nbsp;&nbsp;-3.9404534306891384E-08, 6.5906859977677644E-12, -4.1433054700020206E-16],&nbsp;&nbsp;&nbsp;... etc. ]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;               &nbsp;&nbsp;&nbsp;"description": "P  = f(Sig,R)",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                "inputs":&nbsp;&nbsp;&nbsp;["Sig", "Rb"],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                "output":&nbsp;&nbsp;&nbsp;"P"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "temperature": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           &nbsp;&nbsp;&nbsp;    "coefficients": [[-7875.716974895135,&nbsp;&nbsp;&nbsp;4.720765539450497, -0.036522641391128374], [7.760050026358172, ...etc.&nbsp;&nbsp;&nbsp;],],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;               &nbsp;&nbsp;&nbsp;"description": "T  = f(R,Sig)",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                "inputs":&nbsp;&nbsp;&nbsp;["Rb", "Sig"],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                "output":&nbsp;&nbsp;&nbsp;"T"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax">{<br>&nbsp;&nbsp;&nbsp;    "MM0324": {<br>&nbsp;&nbsp;&nbsp;        "compensatedPressureRange": {<br>&nbsp;&nbsp;&nbsp;            "max": 0.35,<br>&nbsp;&nbsp;&nbsp;            "min": 0.03,<br>&nbsp;&nbsp;&nbsp;            "unit":&nbsp;"bar"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "compensatedTemperatureRange":&nbsp;{<br>&nbsp;&nbsp;&nbsp;            "max": 80.0,<br>&nbsp;&nbsp;&nbsp;            "min": -10.0,<br>&nbsp;&nbsp;&nbsp;            "unit":&nbsp;"°C"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "electricSupply": {<br>&nbsp;&nbsp;&nbsp;            "magnitude": 1.0,<br>&nbsp;&nbsp;&nbsp;            "unit":&nbsp;"mA"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "modelType":&nbsp;"MM0324",<br>&nbsp;&nbsp;&nbsp;        "parts": {<br>&nbsp;&nbsp;&nbsp;            "pressure": {<br>&nbsp;&nbsp;&nbsp;           &nbsp;    "coefficients": [[1.8578428692012365,&nbsp;-0.0017637338444390805, 6.089070597524738E-07, -9.469256273591509E-11,&nbsp;5.4899128873639585E-15],<br>&nbsp;&nbsp;&nbsp; [-0.0972735455799812, 0.00010464739112826799,&nbsp;-3.9404534306891384E-08, 6.5906859977677644E-12, -4.1433054700020206E-16],&nbsp;... etc. ]<br>&nbsp;&nbsp;&nbsp;               &nbsp;"description": "P  = f(Sig,R)",<br>&nbsp;&nbsp;&nbsp;                "inputs":&nbsp;["Sig", "Rb"],<br>&nbsp;&nbsp;&nbsp;                "output":&nbsp;"P"<br>&nbsp;&nbsp;&nbsp;            },<br>&nbsp;&nbsp;&nbsp;            "temperature": {<br>&nbsp;&nbsp;&nbsp;           &nbsp;    "coefficients": [[-7875.716974895135,&nbsp;4.720765539450497, -0.036522641391128374], [7.760050026358172, ...etc.&nbsp;],],<br>&nbsp;&nbsp;&nbsp;               &nbsp;"description": "T  = f(R,Sig)",<br>&nbsp;&nbsp;&nbsp;                "inputs":&nbsp;["Rb", "Sig"],<br>&nbsp;&nbsp;&nbsp;                "output":&nbsp;"T"<br>&nbsp;&nbsp;&nbsp;            }<br>&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;    }<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
   <tr>
     <td class="tg-0lax">compensationCircuit</td>
     <td class="tg-0lax">Compensation circuit</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "outputs": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "P1": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "description":&nbsp;&nbsp;&nbsp;"proident in enim"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        "TOB1": {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            "description":&nbsp;&nbsp;&nbsp;"dolor sit consequat elit"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    "description": "amet aliquip laborum&nbsp;&nbsp;&nbsp;consequat"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax">&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;    "outputs": {<br>&nbsp;&nbsp;&nbsp;        "P1": {<br>&nbsp;&nbsp;&nbsp;            "description":&nbsp;"proident in enim"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "TOB1": {<br>&nbsp;&nbsp;&nbsp;            "description":&nbsp;"dolor sit consequat elit"<br>&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "description": "amet aliquip laborum&nbsp;consequat"<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
 </tbody>
 </table>
