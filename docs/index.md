@@ -40,7 +40,8 @@ There is a free demo user account with the user name 'demo1234' and the password
 
 ### Sign Up & Sign In
 Signing up a user account can be done with the help of engineering@keller-druck.com
-There is already a free demo account  'demo1234' with the password 'demo1234' to see some demo data-
+There is already a free demo account  'demo1234' with the password 'demo1234' to see some demo data.  
+
 ![login example](./media/login-demo1234.png?raw=true)
 
 
@@ -171,7 +172,7 @@ https://editor.swagger.io/
 
 ## 4) The JSON Schema
 
-The schema can be downloaded as [JSON Schema here].
+The schema can be downloaded as JSON Schema [here](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json).
 
 | Root objects |  Explanation | 
 | ------------ | ------------ | 
@@ -471,11 +472,15 @@ The schema can be downloaded as [JSON Schema here].
 todo
 
 Github repo:
-/docs
-/json-schema
-/samples
- - json-schema -> C# classes
- - Web API access sample C#
+
+- /docs - This documentation
+- /schema
+  - keller-sensor-data.schema.json  -  The schema describing the JSON data
+- /samples
+  - /data-model/ExchangeDataContext.cs - Example of a C# data model that can handle JSON files using the schema.
+  - /api/
+    - /csharp/ - C# sample SW to get data from the myCalibration API
+    - /python/ - Python sample SW to get data from the myCalibration API
 
 
 ---
