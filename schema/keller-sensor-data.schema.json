@@ -1,0 +1,565 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "keller-sensor-data",
+	"description": "JSON Schema for KELLER sensor calibration data",
+	"type": "object",
+	"properties": {
+		"version": {
+			"title": "Version",
+			"description": "Version of the corresponding JSON Schema",
+			"type": "string",
+			"pattern": "^(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)$",
+			"$comment": "Uses Semantic Versioning",
+			"examples": [ "1.0.0" ]
+		},
+		"header": {
+			"$ref": "#/definitions/Header"
+		},
+		"compensationMethods": {
+			"$ref": "#/definitions/CompensationMethods"
+		},
+		"measurements": {
+			"title": "Measurements",
+			"description": "Array of individual measurements. Item order corresponds to order in measurement sequence.",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/Measurement"
+			}
+		}
+	},
+	"required": [ "header", "measurements", "version" ],
+	"definitions": {
+		"Header": {
+			"title": "Header",
+			"description": "Header data",
+			"type": "object",
+			"properties": {
+				"creationDate": {
+					"description": "File creation date",
+					"type": "string",
+					"format": "date",
+					"examples": [ "2020-03-24" ]
+				},
+				"remarks": {
+					"type": "string"
+				},
+				"serialNumber": {
+					"description": "KELLER product serial number",
+					"type": "string",
+					"examples": [ "I123456", "321804" ]
+				},
+				"productNumber": {
+					"$ref": "#/definitions/ProductNumber"
+				},
+				"productType": {
+					"description": "KELLER product type",
+					"type": "string",
+					"examples": [
+						"PAA-11HT",
+						"PR-10L",
+						"PA-33X",
+						"PAA-M8cool",
+						"PAA-7LD",
+						"PR-35XEiLV",
+						"PR-36XiW-CTD",
+						"PAA-23D-BLE",
+						"PA-6LHPD-RFID"
+					]
+				},
+				"pressureType": {
+					"description": "KELLER product pressure type",
+					"$ref": "#/definitions/PressureType"
+				},
+				"productSeries": {
+					"description": "KELLER product series",
+					"type": "string",
+					"examples": [
+						"11HT",
+						"10L",
+						"33",
+						"M8cool",
+						"7LD",
+						"35XEiLV",
+						"36XiW-CTD",
+						"23D-BLE",
+						"6LHPD-RFID"
+					]
+				},
+				"compensatedTemperatureRange": {
+					"description": "Temperature range over which the sensors characteristics have been compensated",
+					"$ref": "#/definitions/PhysicalQuantityRange"
+				},
+				"compensatedPressureRange": {
+					"description": "Pressure range over which the sensors characteristics have been compensated",
+					"$ref": "#/definitions/PhysicalQuantityRange"
+				},
+				"electricSupply": {
+					"description": "Nominal electric supply",
+					"oneOf": [
+						{
+							"$ref": "#/definitions/PhysicalQuantity"
+						},
+						{
+							"$ref": "#/definitions/PhysicalQuantityRange"
+						}
+					],
+					"examples": [
+						{
+							"magnitude": 1,
+							"unit": "mA"
+						},
+						{
+							"min": 28,
+							"max": 32,
+							"unit": "V"
+						}
+					]
+				},
+				"orderNumber": {
+					"description": "KELLER purchase order number",
+					"type": "integer",
+					"examples": [ 123456 ]
+				},
+				"orderPosition": {
+					"description": "KELLER purchase order position",
+					"type": "integer",
+					"examples": [ 2 ]
+				},
+				"orderTargetDispatchDate": {
+					"description": "Targeted dispatch date of the order",
+					"type": "string",
+					"format": "date",
+					"examples": [ "2020-03-27" ]
+				},
+				"customerName": {
+					"description": "Customer name",
+					"type": "string"
+				},
+				"customerNumber": {
+					"description": "KELLER customer identification number",
+					"type": "integer",
+					"examples": [ 13245 ]
+				},
+				"customerOrderNumber": {
+					"description": "Customer internal purchase order number",
+					"type": "string"
+				},
+				"customerReferenceNumber": {
+					"description": "Customer internal reference number",
+					"type": "string"
+				},
+				"customerProductType": {
+					"description": "Customer internal product type",
+					"type": "string"
+				}
+			},
+			"required": [
+				"remarks",
+				"serialNumber",
+				"productNumber",
+				"productType",
+				"pressureType",
+				"productSeries",
+				"compensatedTemperatureRange",
+				"compensatedPressureRange",
+				"electricSupply",
+				"orderNumber",
+				"orderPosition",
+				"orderTargetDispatchDate",
+				"customerName",
+				"customerNumber",
+				"customerOrderNumber",
+				"customerReferenceNumber",
+				"customerProductType"
+			]
+		},
+		"ProductNumber": {
+			"description": "KELLER product number",
+			"type": "string",
+			"pattern": "^[0-9]{6}\\.[0-9]{4}$",
+			"examples": [ "123456.1234" ]
+		},
+		"PressureType": {
+			"title": "PressureType",
+			"description": "Pressure type",
+			"type": "string",
+			"enum": [ "", "PAA", "PA", "PR", "PD", "PRD" ]
+		},
+		"PhysicalQuantity": {
+			"title": "PhysicalQuantity",
+			"description": "Physical quantity consisting of a magnitude and a unit of measurement",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"magnitude": {
+					"type": "number"
+				},
+				"unit": {
+					"$ref": "#/definitions/PhysicalUnit"
+				}
+			},
+			"required": [ "magnitude", "unit" ]
+		},
+		"PhysicalQuantityRange": {
+			"title": "PhysicalQuantityRange",
+			"description": "Range of physical quantities consisting of a minimum and maximum magnitude and a unit of measurement",
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"min": {
+					"type": "number"
+				},
+				"max": {
+					"type": "number"
+				},
+				"unit": {
+					"$ref": "#/definitions/PhysicalUnit"
+				}
+			},
+			"required": [ "max", "min", "unit" ]
+		},
+		"PhysicalUnit": {
+			"title": "PhysicalUnit",
+			"description": "Unit of measurement",
+			"type": "string",
+			"enum": [
+				"",
+				"bar",
+				"mbar",
+				"psi",
+				"Pa",
+				"kPa",
+				"hPa",
+				"MPa",
+				"mH2O",
+				"cmH2O",
+				"mmH2O",
+				"inH2O",
+				"ftH2O",
+				"mmHg",
+				"cmHg",
+				"inHg",
+				"kp/cm2",
+				"lbf/ft2",
+				"kN/m2",
+				"atm",
+				"Torr",
+				"°C",
+				"K",
+				"V",
+				"mV",
+				"A",
+				"mA",
+				"Ohm",
+				"kOhm",
+				"MOhm",
+				"%FS",
+				"mV/mA",
+				"mV/V"
+			]
+		},
+		"CompensationMethods": {
+			"title": "CompensationMethods",
+			"description": "Information on different compensation methods",
+			"type": "object",
+			"properties": {
+				"mathematicalModels": {
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/definitions/MathematicalModel"
+					},
+					"propertyNames": {
+						"$ref": "#/definitions/MathematicalModelName"
+					}
+				},
+				"compensationCircuit": {
+					"$ref": "#/definitions/CompensationCircuit"
+				}
+			}
+		},
+		"MathematicalModel": {
+			"title": "MathematicalModel",
+			"description": "A mathematical compensation model",
+			"type": "object",
+			"properties": {
+				"modelType": {
+					"type": "string",
+					"examples": [ "MM0123" ]
+				},
+				"productNumber": {
+					"$ref": "#/definitions/ProductNumber"
+				},
+				"compensatedTemperatureRange": {
+					"$ref": "#/definitions/PhysicalQuantityRange",
+					"description": "Temperature range of the mathematical compensation model"
+				},
+				"compensatedPressureRange": {
+					"$ref": "#/definitions/PhysicalQuantityRange",
+					"description": "Pressure range of the mathematical compensation model"
+				},
+				"electricSupply": {
+					"$ref": "#/definitions/PhysicalQuantity",
+					"description": "Nominal electric supply of the mathematical compensation model",
+					"examples": [ { "magnitude": 1, "unit": "mA" } ]
+				},
+				"parts": {
+					"$ref": "#/definitions/MathematicalModelParts"
+				}
+			},
+			"required": [ "parts" ]
+		},
+		"MathematicalModelName": {
+			"type": "string",
+			"minLength": 1,
+			"examples": [  ]
+		},
+		"MathematicalModelParts": {
+			"title": "MathematicalModelParts",
+			"description": "Named parts of mathematical compensation model",
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/definitions/MathematicalModelPart"
+			},
+			"propertyNames": {
+				"$ref": "#/definitions/MathematicalModelPartName"
+			}
+		},
+		"MathematicalModelPartName": {
+			"type": "string",
+			"minLength": 1,
+			"examples": [ "pressure", "temperature" ]
+		},
+		"MathematicalModelPart": {
+			"title": "MathematicalModelPart",
+			"description": "Part of mathematical compensation model that generates of compensated output",
+			"type": "object",
+			"properties": {
+				"inputs": {
+					"description": "Input variables of the model part",
+					"type": "array",
+					"items": {
+						"type": "string",
+						"minLength": 1
+					},
+					"uniqueItems": true,
+					"minItems": 1,
+					"maxItems": 2,
+					"examples": [ [ "Sig", "R" ], [ "R" ] ]
+				},
+				"output": {
+					"description": "Output variable of the model part",
+					"type": "string",
+					"minLength": 1,
+					"examples": [ "P" ]
+				},
+				"description": {
+					"type": "string",
+					"examples": [ "P = f(Sig,R)", "T = f(R)" ]
+				},
+				"coefficients": {
+					"type": "array",
+					"items": {
+						"type": "array",
+						"items": {
+							"type": "number"
+						}
+					}
+				}
+			},
+			"required": [ "coefficients", "description", "inputs", "output" ]
+		},
+		"CompensationCircuit": {
+			"title": "Compensation circuit",
+			"description": "Compensation circuit",
+			"type": "object",
+			"properties": {
+				"outputs": {
+					"description": "Outputs of the compensation circuit",
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/definitions/CompensationCircuitOutput"
+					},
+					"propertyNames": {
+						"$ref": "#/definitions/CompensationCircuitOutputName"
+					},
+					"examples": [  ]
+				},
+				"description": {
+					"type": "string",
+					"examples": [  ]
+				}
+			},
+			"required": [ "outputs", "description" ]
+		},
+		"CompensationCircuitOutputName": {
+			"type": "string",
+			"minLength": 1,
+			"examples": [
+				"CH0",
+				"P1",
+				"P2",
+				"T",
+				"TOB1",
+				"TOB2",
+				"Analogue",
+				"Cond_TC"
+			]
+		},
+		"CompensationCircuitOutput": {
+			"title": "CompensationCircuitOutput",
+			"description": "Compensation circuit output",
+			"type": "object",
+			"properties": {
+				"description": {
+					"type": "string",
+					"examples": [  ]
+				}
+			},
+			"required": [ "description" ]
+		},
+		"Measurement": {
+			"title": "Measurement",
+			"description": "One measurement point",
+			"type": "object",
+			"properties": {
+				"reference": {
+					"$ref": "#/definitions/MeasurementReference"
+				},
+				"environmentTarget": {
+					"$ref": "#/definitions/MeasurementEnvironmentTarget"
+				},
+				"environment": {
+					"$ref": "#/definitions/MeasurementEnvironment"
+				},
+				"raw": {
+					"$ref": "#/definitions/MeasurementRaw"
+				},
+				"compensated": {
+					"$ref": "#/definitions/MeasurementCompensated"
+				}
+			},
+			"required": [ "reference", "environment" ]
+		},
+		"MeasurementReference": {
+			"title": "MeasurementReference",
+			"description": "KELLER reference to original measurement data",
+			"type": "string"
+		},
+		"MeasurementEnvironmentTarget": {
+			"title": "MeasurementEnvironmentTarget",
+			"description": "Target conditions of the measurement point environment",
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/definitions/PhysicalQuantity"
+			},
+			"propertyNames": {
+				"$ref": "#/definitions/MeasurementEnvironmentName"
+			}
+		},
+		"MeasurementEnvironment": {
+			"title": "MeasurementEnvironment",
+			"description": "Real conditions of the measurement point environment",
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/definitions/PhysicalQuantity"
+			},
+			"propertyNames": {
+				"$ref": "#/definitions/MeasurementEnvironmentName"
+			}
+		},
+		"MeasurementEnvironmentName": {
+			"type": "string",
+			"minLength": 1,
+			"examples": [ "pressure", "temperature", "supply" ]
+		},
+		"MeasurementRaw": {
+			"title": "MeasurementRaw",
+			"description": "Raw measurement values",
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/definitions/PhysicalQuantity"
+			},
+			"propertyNames": {
+				"$ref": "#/definitions/MeasurementRawName"
+			}
+		},
+		"MeasurementRawName": {
+			"type": "string",
+			"minLength": 1,
+			"examples": [ "signal", "bridgeResistance" ]
+		},
+		"MeasurementCompensated": {
+			"title": "MeasurementCompensated",
+			"description": "Compensated measurement data by different compensation methods",
+			"type": "object",
+			"properties": {
+				"mathematicalModels": {
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/definitions/MeasurementCompensatedMathematicalModel"
+					},
+					"propertyNames": {
+						"$ref": "#/definitions/MathematicalModelName"
+					}
+				},
+				"compensationCircuitOutputs": {
+					"type": "object",
+					"propertyNames": {
+						"$ref": "#/definitions/CompensationCircuitOutputName"
+					},
+					"additionalProperties": {
+						"type": "object",
+						"properties": {
+							"measuredValue": {
+								"$ref": "#/definitions/PhysicalQuantity"
+							},
+							"nominalValue": {
+								"$ref": "#/definitions/PhysicalQuantity"
+							}
+						},
+						"required": [ "measuredValue", "nominalValue" ]
+					},
+					"examples": [
+						{
+							"P1": {
+								"measuredValue": {
+									"magnitude": 0.1001,
+									"unit": "bar"
+								},
+								"nominalValue": {
+									"magnitude": 0.1,
+									"unit": "bar"
+								}
+							}
+						}
+					]
+				}
+			}
+		},
+		"MeasurementCompensatedMathematicalModel": {
+			"title": "MeasurementCompensatedMathematicalModel",
+			"description": "Compensated measurement data by a mathematical compensation model",
+			"type": "object",
+			"propertyNames": {
+				"$ref": "#/definitions/MathematicalModelPartName"
+			},
+			"additionalProperties": {
+				"$ref": "#/definitions/MeasurementCompensatedMathematicalModelPart"
+			}
+		},
+		"MeasurementCompensatedMathematicalModelPart": {
+			"title": "MeasurementCompensatedMathematicalModelPart",
+			"description": "Compensated measurement data by a part of a mathematical compensation model",
+			"type": "object",
+			"properties": {
+				"output": {
+					"$ref": "#/definitions/PhysicalQuantity"
+				},
+				"error": {
+					"$ref": "#/definitions/PhysicalQuantity"
+				}
+			},
+			"required": [ "output", "error" ]
+		}
+	}
+}
