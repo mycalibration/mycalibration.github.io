@@ -8,6 +8,7 @@ Table of Contents
  * [3) Web API](#3-web-api)
  * [4) The JSON Schema](#4-the-json-schema)
  * [5) Sample Software](#5-sample-software)
+ * [6) FAQ](#6-faq)
 
 ---
 
@@ -465,7 +466,6 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
 </tbody>
 </table>
 
-
 ---
 
 ## 5) Sample Software
@@ -475,7 +475,7 @@ Github repo:
 
 - /docs - This documentation
 - /schema
-  - keller-sensor-data.schema.json  -  The schema describing the JSON data
+  - keller-sensor-data.schema.json - The schema describing the JSON data
 - /samples
   - /data-model/ExchangeDataContext.cs - Example of a C# data model that can handle JSON files using the schema.
   - /api/
@@ -485,4 +485,20 @@ Github repo:
 
 ---
 
+## 6) FAQ
 
+ - *Can I try out the myCalibration service?*  
+ ...
+
+ - *How can I automatically download the data and store it into my database / SCADA / file system?*  
+ ...
+
+ - *What is the easiest way to develop a software to download the data?*  
+ ...
+
+ - *I have the JSON file. How to I parse these file to extract the information I need?*  
+ ...
+
+ - *Where do I get a permanent access token from to access the API?*   
+...
+---
