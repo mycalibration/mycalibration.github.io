@@ -477,16 +477,16 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
 ## 5) Sample Software
 todo
 
-Github repo:
+Github repo: https://github.com/mycalibration/mycalibration.github.io/
 
-- /docs - This documentation
-- /schema
-  - keller-sensor-data.schema.json - The schema describing the JSON data
-- /samples
-  - /data-model/ExchangeDataContext.cs - Example of a C# data model that can handle JSON files using the schema.
-  - /api/
-    - /csharp/ - C# sample SW to get data from the myCalibration API
-    - /python/ - Python sample SW to get data from the myCalibration API
+- **/docs** - *This documentation*
+- **/schema**
+  - **[keller-sensor-data.schema.json](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json)** - *The schema describing the JSON data*
+- **/samples**
+  - **[/data-model/ExchangeDataContext.cs](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/ExchangeDataContext.cs)** - *Example of a C# data model that can handle JSON files using the schema.*
+  - **/api/**
+    - **/csharp/** - *C# sample SW to get data from the myCalibration API*   ...***todo***...
+    - **/python/** - *Python sample SW to get data from the myCalibration API*   ...***todo***...
 
 
 ---
@@ -494,17 +494,20 @@ Github repo:
 ## 6) FAQ
 
  - *Can I try out the myCalibration service?*  
- ...
+ Yes. Use the user 'Demo1234' and its password 'Demo1234'. This gives you access to a demo account with some valid demo data. 
 
  - *How can I automatically download the data and store it into my database / SCADA / file system?*  
- ...
+ Use the Web API (https://senswebapi.azurewebsites.net/) and a permanent access token to access the data on-demand via REST API queries. The SW for this is not complicated. Use meaningful filter parameter and load the data periodically.
 
  - *What is the easiest way to develop a software to download the data?*  
- ...
+ There is open-sourced sample SW on https://github.com/mycalibration/mycalibration.github.io/  
+ Use the [swagger UI](https://senswebapi.azurewebsites.net/swagger/index.html) and a temporary access token to get yourself familiar with the filter parameters.  
+ Use the [swagger file](https://senswebapi.azurewebsites.net/swagger/v1/swagger.json) to generate a client SW in your prefered language using generator-SW such as https://editor.swagger.io/ (C#, Go, HTML, Java, Javascript, Python, PHP, Scala, Typescript...)
 
  - *I have the JSON file. How to I parse these file to extract the information I need?*  
- ...
+ The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See https://json-schema.org/implementations.html#generators-from-schemas  
+ We used https://app.quicktype.io/ to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/ExchangeDataContext.cs) that makes it easy to deserialize the JSON.
 
  - *Where do I get a permanent access token from to access the API?*   
-...
+ The temporary and permanent access token can be seen in the web app under   ...***todo***...
 ---
