@@ -1,1 +1,7 @@
 .vscode/ltex.dictionary.en-US.txt
+samples/data-model/KellerSensorData.Tests/obj/KellerSensorData.Tests.csproj.nuget.dgspec.json
+samples/data-model/KellerSensorData.Tests/obj/KellerSensorData.Tests.csproj.nuget.g.props
+samples/data-model/KellerSensorData.Tests/obj/KellerSensorData.Tests.csproj.nuget.g.targets
+samples/data-model/KellerSensorData.Tests/obj/project.assets.json
+samples/data-model/KellerSensorData.Tests/obj/project.nuget.cache
+.gitignore
