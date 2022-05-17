@@ -39,7 +39,7 @@ A REST API is available for automated access. Customers can integrate this API i
 
 ## 2) Web App
 
-The web app is here: [https://sensweb.azurewebsites.net/](https://sensweb.azurewebsites.net)
+The web app is here: [https://mycalibration.azurewebsites.net/](https://mycalibration.azurewebsites.net)
 
 ![Web App UI](./media/web-app-example.png?raw=true)
 
@@ -55,16 +55,16 @@ There is already a free demo account '**Demo1234**' with the password '**Demo123
 ---
 
 ## 3) Web API
-The Web API's URL is https://senswebapi.azurewebsites.net/
+The Web API's URL is https://mycalibrationapi.azurewebsites.net/
 
-The OpenAPI specification page is: [https://senswebapi.azurewebsites.net/swagger/index.html](https://senswebapi.azurewebsites.net/swagger/index.html)
+The OpenAPI specification page is: [https://mycalibrationapi.azurewebsites.net/swagger/index.html](https://mycalibrationapi.azurewebsites.net/swagger/index.html)
 
 All the calibration data can be exported as
 - JSON meta-information (header only) 
 - zip file with the filtered and compressed JSON files (header+data)
 - brotli file with the filtered and compressed JSON files (header+data)
 
-swagger json: https://senswebapi.azurewebsites.net/swagger/v1/swagger.json
+swagger json: https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json
 
 ### API endpoints
 
@@ -129,7 +129,7 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 | ExcludedIds | query | If null: Either are 'ALL SELECTED' or only some few are selected (and listed in IncludedIds)<br />  If not null: All are selected and except those that are listed here.<br />  It is not allowed to have IncludedIds AND ExcludedIds have listed values. One most be null or both most be null.<br />  The list of excluded ids is limited to 50. More than 50 will throw an exception.<br /> | No | [ string ] |
 | OrderNumbers | query | List of Order Numbers | No | [ string ] |
 | OrderPositions | query | List of Order Positions | No | [ string ] |
-| DateFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange'.<br />  When 'inRange' then 'DateTo' is needed.<br />  Example 1:<br />  "All data newer than August 1st" = <https://senswebapi.azurewebsites.net/v1/CalibrationData?DateFilterType=greaterThan&Date=2021-08-01><br />  Example 2:<br />  "All data from the year 2020" = <https://senswebapi.azurewebsites.net/v1/CalibrationData?DateFilterType=inRange&Date=2021-01-01&DateTo=2021-12-31> <br />  Example 3:<br />  "All data from the first day in January and February" = <https://senswebapi.azurewebsites.net/v1/CalibrationData?DateFilterType=equals&Date=2021-01-01&Date=2021-02-01> <br /> | No | string |
+| DateFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange'.<br />  When 'inRange' then 'DateTo' is needed.<br />  Example 1:<br />  "All data newer than August 1st" = <https://mycalibrationapi.azurewebsites.net/v1/CalibrationData?DateFilterType=greaterThan&Date=2021-08-01><br />  Example 2:<br />  "All data from the year 2020" = <https://mycalibrationapi.azurewebsites.net/v1/CalibrationData?DateFilterType=inRange&Date=2021-01-01&DateTo=2021-12-31> <br />  Example 3:<br />  "All data from the first day in January and February" = <https://mycalibrationapi.azurewebsites.net/v1/CalibrationData?DateFilterType=equals&Date=2021-01-01&Date=2021-02-01> <br /> | No | string |
 | Date | query | Dispatch-date text in format 'yyyy-MM-dd' eg. "2021-12-24"<br />  Normally, this is a list with one element. Nevertheless, it is possible to GET calibration data from multiple dates. In this case DateFilterType must be 'equals' and DateTo must be null. | No | [ string ] |
 | DateTo | query | Used when DateFilterType is 'inRange'.<br />  Data is gathered from 'Date' to 'DateTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | string |
 | CustomerProductTypes | query | To search for [Blanks] use "blank" | No | [ string ] |
@@ -497,12 +497,12 @@ Github repo: https://github.com/mycalibration/mycalibration.github.io/
  Yes. Use the user 'Demo1234' and its password 'Demo1234'. This gives you access to a demo account with some valid demo data. 
 
  - *How can I automatically download the data and store it into my database / SCADA / file system?*  
- Use the Web API (https://senswebapi.azurewebsites.net/) and a permanent access token to access the data on-demand via REST API queries. The SW for this is not complicated. Use meaningful filter parameter and load the data periodically.
+ Use the Web API (https://mycalibrationapi.azurewebsites.net/) and a permanent access token to access the data on-demand via REST API queries. The SW for this is not complicated. Use meaningful filter parameter and load the data periodically.
 
  - *What is the easiest way to develop software to download the data?*  
  There is open-sourced sample SW on https://github.com/mycalibration/mycalibration.github.io/  
- Use the [swagger UI](https://senswebapi.azurewebsites.net/swagger/index.html) and a temporary access token to get yourself familiar with the filter parameters.  
- Use the [swagger file](https://senswebapi.azurewebsites.net/swagger/v1/swagger.json) to generate a client SW in your prefered language using generator-SW such as https://editor.swagger.io/ (C#, Go, HTML, Java, Javascript, Python, PHP, Scala, Typescript...)
+ Use the [swagger UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html) and a temporary access token to get yourself familiar with the filter parameters.  
+ Use the [swagger file](https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json) to generate a client SW in your prefered language using generator-SW such as https://editor.swagger.io/ (C#, Go, HTML, Java, Javascript, Python, PHP, Scala, Typescript...)
 
  - *I have the JSON file. How do I parse these files to extract the information I need?*  
  The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See https://json-schema.org/implementations.html#generators-from-schemas  
