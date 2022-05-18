@@ -5,3 +5,8 @@ samples/data-model/KellerSensorData.Tests/obj/KellerSensorData.Tests.csproj.nuge
 samples/data-model/KellerSensorData.Tests/obj/project.assets.json
 samples/data-model/KellerSensorData.Tests/obj/project.nuget.cache
 .gitignore
+samples/data-model/KellerSensorData.Tests/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+samples/data-model/KellerSensorData.Tests/obj/Debug/net6.0/KellerSensorData.Tests.AssemblyInfo.cs
+samples/data-model/KellerSensorData.Tests/obj/Debug/net6.0/KellerSensorData.Tests.AssemblyInfoInputs.cache
+samples/data-model/KellerSensorData.Tests/obj/Debug/net6.0/KellerSensorData.Tests.csproj.AssemblyReference.cache
+samples/data-model/KellerSensorData.Tests/obj/Debug/net6.0/KellerSensorData.Tests.GeneratedMSBuildEditorConfig.editorconfig

@@ -493,21 +493,21 @@ Github repo: https://github.com/mycalibration/mycalibration.github.io/
 
 ## 6) FAQ
 
- - *Can I try out the myCalibration service?*  
+ - ***Can I try out the myCalibration service?***  
  Yes. Use the user 'Demo1234' and its password 'Demo1234'. This gives you access to a demo account with some valid demo data. 
 
- - *How can I automatically download the data and store it into my database / SCADA / file system?*  
+ - ***How can I automatically download the data and store it into my database / SCADA / file system?*  
  Use the Web API (https://mycalibrationapi.azurewebsites.net/) and a permanent access token to access the data on-demand via REST API queries. The SW for this is not complicated. Use meaningful filter parameter and load the data periodically.
 
- - *What is the easiest way to develop software to download the data?*  
+ - ***What is the easiest way to develop software to download the data?***  
  There is open-sourced sample SW on https://github.com/mycalibration/mycalibration.github.io/  
  Use the [swagger UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html) and a temporary access token to get yourself familiar with the filter parameters.  
- Use the [swagger file](https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json) to generate a client SW in your prefered language using generator-SW such as https://editor.swagger.io/ (C#, Go, HTML, Java, Javascript, Python, PHP, Scala, Typescript...)
+ Use the [swagger file](https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json) to generate a client SW in your preferred language using generator-SW such as https://editor.swagger.io/ (C#, Go, HTML, Java, Javascript, Python, PHP, Scala, Typescript...)
 
- - *I have the JSON file. How do I parse these files to extract the information I need?*  
+ - ***I have the JSON file. How do I parse these files to extract the information I need?***  
  The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See https://json-schema.org/implementations.html#generators-from-schemas  
  We used https://app.quicktype.io/ to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
 
- - *Where do I get a permanent access token from to access the API?*   
+ - ***Where do I get a permanent access token from to access the API?***   
  The temporary and permanent access token can be seen in the web app under   ...***todo***...
 ---
