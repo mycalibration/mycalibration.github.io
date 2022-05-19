@@ -165,7 +165,66 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 | CustomerOrderNumberSearchText | query | Find all data with contains this search text | No | string |
 | RemarksSearchText | query | Find all data with contains this search text | No | string |
 
+#### Filter parameters - PhysicalUnits & PressureTypes
 
+#### Filter parameters - PhysicalUnits : PressureUnit, TemperatureUnit, SupplyUnit
+
+Although '*%FS*' is shown in the UI and listed in the JSON, the API parameter string used is '*Fs*'.
+```
+ ________________________
+|          |             |
+|   Unit   |  API string |
+|__________|_____________|
+|  %FS     |  Fs         |
+|  A       |  A          |
+|  K       |  K          |
+|  MOhm    |  MOhm       |
+|  MPa     |  MPa        |
+|  Ohm     |  Ohm        |
+|  Pa      |  Pa         |
+|  Torr    |  Torr       |
+|  V       |  V          |
+|  VDC     |  VDC        |
+|  atm     |  Atm        |
+|  bar     |  Bar        |
+|  cmH2O   |  CmH2O      |
+|  cmHg    |  CmHg       |
+|  ftH2O   |  FtH2O      |
+|  hPa     |  HPa        |
+|  inH2O   |  InH2O      |
+|  inHg    |  InHg       |
+|  kN/m2   |  KNM2       |
+|  kOhm    |  KOhm       |
+|  kPa     |  KPa        |
+|  kp/cm2  |  KpCm2      |
+|  lbf/ft2 |  LbfFt2     |
+|  mA      |  MA         |
+|  mH2O    |  MH2O       |
+|  mV      |  MV         |
+|  mV/V    |  MVV        |
+|  mV/mA   |  MVMA       |
+|  mbar    |  Mbar       |
+|  mmH2O   |  MmH2O      |
+|  mmHg    |  MmHg       |
+|  psi     |  Psi        |
+|  °C      |  C          |
+|________________________|
+```
+
+##### Filter parameters - PressureTypes
+Although '*PA*' is shown in the UI and listed in the JSON, the API parameter string used is '*Pa*'.
+```
+ ______________________
+|        |             |
+|  Unit  |  API string |
+|________|_____________|
+|  PA    |  Pa         |
+|  PAA   |  Paa        |
+|  PD    |  Pd         |
+|  PR    |  Pr         |
+|  PRD   |  Prd        |
+|______________________|
+```
 
 ### Example queries
 
