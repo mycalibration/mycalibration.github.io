@@ -55,7 +55,7 @@ There is already a free demo account '**Demo1234**' with the password '**Demo123
 ---
 
 ## 3) Web API
-The Web API's URL is https://mycalibrationapi.azurewebsites.net/
+The Web API's URL is [https://mycalibrationapi.azurewebsites.net](https://mycalibrationapi.azurewebsites.net)
 
 The OpenAPI specification page is: [https://mycalibrationapi.azurewebsites.net/swagger/index.html](https://mycalibrationapi.azurewebsites.net/swagger/index.html)
 
@@ -64,7 +64,7 @@ All the calibration data can be exported as
 - zip file with the filtered and compressed JSON files (header+data)
 - brotli file with the filtered and compressed JSON files (header+data)
 
-swagger json: https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json
+The Swagger JSON file can be found here: [https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json](https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json)
 
 ### API endpoints
 
@@ -141,25 +141,25 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 | PressureMin | query | The exclusive lower bound of the "Minimum Pressure" | No | double |
 | PressureMinTo | query | The exclusive upper bound of the "Minimum Pressure".<br />  Used when PressureMinFilterType is 'inRange'.<br />  Data is gathered from 'PressureMin' to 'PressureMinTo'.<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24"<br /> | No | double |
 | PressureMaxFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange', 'lessThanOrEqual', 'greaterThanOrEqual'.<br />  When 'inRange' then 'PressureMaxTo' is needed. | No | string |
-| PressureMax | query | /// TODO: greaterOrEqualThan???<br />  The exclusive lower bound of the "Maximum Pressure" | No | double |
-| PressureMaxTo | query | TODO: greaterOrEqualThan???  The exclusive upper bound of the "Maximum Pressure"<br />  Used when PressureMaxFilterType is 'inRange'.<br />  Data is gathered from 'PressureMax' to 'PressureMaxTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | double |
+| PressureMax | query | The exclusive lower bound of the "Maximum Pressure" | No | double |
+| PressureMaxTo | query | The exclusive upper bound of the "Maximum Pressure"<br />  Used when PressureMaxFilterType is 'inRange'.<br />  Data is gathered from 'PressureMax' to 'PressureMaxTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | double |
 | PressureUnit | query | <list type="string">List of the Pressure Unit</list> | No | [ string ] |
 | TemperatureMinFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange', 'lessThanOrEqual', 'greaterThanOrEqual'.<br />  When 'inRange' then 'TemperatureMinTo' is needed. | No | string |
-| TemperatureMin | query | /// TODO: greaterOrEqualThan???<br />  The exclusive lower bound of the "Minimum Temperature" | No | double |
-| TemperatureMinTo | query | TODO: greaterOrEqualThan???<br />  The exclusive upper bound of the "Minimum Temperature"<br />  Used when TemperatureMinFilterType is 'inRange'.<br />  Data is gathered from 'TemperatureMin' to 'TemperatureMinTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | double |
+| TemperatureMin | query | The exclusive lower bound of the "Minimum Temperature" | No | double |
+| TemperatureMinTo | query | The exclusive upper bound of the "Minimum Temperature"<br />  Used when TemperatureMinFilterType is 'inRange'.<br />  Data is gathered from 'TemperatureMin' to 'TemperatureMinTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | double |
 | TemperatureMaxFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange', 'lessThanOrEqual', 'greaterThanOrEqual'.<br />  When 'inRange' then 'TemperatureMaxTo' is needed. | No | string |
-| TemperatureMax | query | /// TODO: greaterOrEqualThan???<br />  The exclusive lower bound of the "Maximum Temperature" | No | double |
-| TemperatureMaxTo | query | TODO: greaterOrEqualThan???  The exclusive upper bound of the "Maximum Temperature"<br />  Used when TemperatureMaxFilterType is 'inRange'.<br />  Data is gathered from 'TemperatureMax' to 'TemperatureMaxTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | double |
+| TemperatureMax | query | The exclusive lower bound of the "Maximum Temperature" | No | double |
+| TemperatureMaxTo | query | The exclusive upper bound of the "Maximum Temperature"<br />  Used when TemperatureMaxFilterType is 'inRange'.<br />  Data is gathered from 'TemperatureMax' to 'TemperatureMaxTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24" | No | double |
 | TemperatureUnit | query | <list type="string">List of the Temperature Unit</list> | No | [ string ] |
 | SupplyMinFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange', 'lessThanOrEqual', 'greaterThanOrEqual'.<br />  When 'inRange' then 'SupplyMinTo' is needed.<br />  Either Min/Max is used or Magnitude.<br /> | No | string |
-| SupplyMin | query | TODO: greaterOrEqualThan???<br />  The exclusive lower bound of the "Minimum Supply"<br />  Either Min/Max is used or Magnitude. | No | double |
-| SupplyMinTo | query | TODO: greaterOrEqualThan???<br />  The exclusive upper bound of the "Minimum Supply"<br />  Used when SupplyMinFilterType is 'inRange'.<br />  Data is gathered from 'SupplyMin' to 'SupplyMinTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24"<br />  Either Min/Max is used or Magnitude. | No | double |
+| SupplyMin | query | The exclusive lower bound of the "Minimum Supply"<br />  Either Min/Max is used or Magnitude. | No | double |
+| SupplyMinTo | query | The exclusive upper bound of the "Minimum Supply"<br />  Used when SupplyMinFilterType is 'inRange'.<br />  Data is gathered from 'SupplyMin' to 'SupplyMinTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24"<br />  Either Min/Max is used or Magnitude. | No | double |
 | SupplyMaxFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange', 'lessThanOrEqual', 'greaterThanOrEqual'.<br />  When 'inRange' then 'SupplyMaxTo' is needed.<br />  Either Min/Max is used or Magnitude. | No | string |
-| SupplyMax | query | /// TODO: greaterOrEqualThan???<br />  The exclusive lower bound of the "Maximum Supply"<br />  Either Min/Max is used or Magnitude. | No | double |
-| SupplyMaxTo | query | TODO: greaterOrEqualThan???<br />  The exclusive upper bound of the "Maximum Supply"<br />  Used when SupplyMaxFilterType is 'inRange'.<br />  Data is gathered from 'SupplyMax' to 'SupplyMaxTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24"<br />  Either Min/Max is used or Magnitude. | No | double |
+| SupplyMax | query | The exclusive lower bound of the "Maximum Supply"<br />  Either Min/Max is used or Magnitude. | No | double |
+| SupplyMaxTo | query | The exclusive upper bound of the "Maximum Supply"<br />  Used when SupplyMaxFilterType is 'inRange'.<br />  Data is gathered from 'SupplyMax' to 'SupplyMaxTo'<br />  Date text in format 'yyyy-MM-dd' eg. "2021-12-24"<br />  Either Min/Max is used or Magnitude. | No | double |
 | SupplyMagnitudeFilterType | query | One of 'equals', 'greaterThan', 'lessThan', 'notEqual', 'inRange', 'lessThanOrEqual', 'greaterThanOrEqual'.<br />  When 'inRange' then 'SupplyMagnitudeTo' is needed.<br />  Either Min/Max is used or Magnitude. | No | string |
-| SupplyMagnitude | query | /// TODO: greaterOrEqualThan???<br />  The exclusive lower bound of the "Supply Magnitude"<br />  Either Min/Max is used or Magnitude. | No | double |
-| SupplyMagnitudeTo | query | TODO: greaterOrEqualThan???<br />  The exclusive upper bound of the "Supply Magnitude"<br />  Used when SupplyMagnitudeFilterType is 'inRange'.<br />  Data is gathered from 'SupplyMagnitude' to 'SupplyMagnitudeTo'<br />  Either Min/Max is used or Magnitude. | No | double |
+| SupplyMagnitude | query | The exclusive lower bound of the "Supply Magnitude"<br />  Either Min/Max is used or Magnitude. | No | double |
+| SupplyMagnitudeTo | query | The exclusive upper bound of the "Supply Magnitude"<br />  Used when SupplyMagnitudeFilterType is 'inRange'.<br />  Data is gathered from 'SupplyMagnitude' to 'SupplyMagnitudeTo'<br />  Either Min/Max is used or Magnitude. | No | double |
 | SupplyUnit | query | <list type="string">List of the Supply Unit</list> | No | [ string ] |
 | CustomerReferenceNumberSearchText | query | Find all data with contains this search text | No | string |
 | CustomerOrderNumberSearchText | query | Find all data with contains this search text | No | string |
@@ -172,7 +172,7 @@ Exports the filtered calibration data as ZIP or BROTLI file with the calibration
 TODO
 
 ### Generate client SW using the OpenAPI/swagger schema. 
-https://editor.swagger.io/
+![https://editor.swagger.io/](https://editor.swagger.io/)
 
 ---
 
@@ -467,7 +467,7 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
     <td class="tg-0lax">Compensation circuit</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">object</td>
-    <td class="tg-0lax">&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;    "outputs": {<br>&nbsp;&nbsp;&nbsp;        "P1": {<br>&nbsp;&nbsp;&nbsp;            "description":&nbsp;"proident in enim"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "TOB1": {<br>&nbsp;&nbsp;&nbsp;            "description":&nbsp;"dolor sit consequat elit"<br>&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "description": "amet aliquip laborum&nbsp;consequat"<br>&nbsp;&nbsp;&nbsp;}</td>
+    <td class="tg-0lax">&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;    "outputs": {<br>&nbsp;&nbsp;&nbsp;        "P1": {<br>&nbsp;&nbsp;&nbsp;            "description":&nbsp;"Pressure 1"<br>&nbsp;&nbsp;&nbsp;        },<br>&nbsp;&nbsp;&nbsp;        "TOB1": {<br>&nbsp;&nbsp;&nbsp;            "description":&nbsp;"Temperature 1"<br>&nbsp;&nbsp;&nbsp;        }<br>&nbsp;&nbsp;&nbsp;    },<br>&nbsp;&nbsp;&nbsp;    "description": "5432109.0004"<br>&nbsp;&nbsp;&nbsp;}</td>
   </tr>
 </tbody>
 </table>
@@ -496,7 +496,7 @@ Github repo: https://github.com/mycalibration/mycalibration.github.io/
  - ***Can I try out the myCalibration service?***  
  Yes. Use the user 'Demo1234' and its password 'Demo1234'. This gives you access to a demo account with some valid demo data. 
 
- - ***How can I automatically download the data and store it into my database / SCADA / file system?*  
+ - ***How can I automatically download the data and store it into my database / SCADA / file system?***  
  Use the Web API (https://mycalibrationapi.azurewebsites.net/) and a permanent access token to access the data on-demand via REST API queries. The SW for this is not complicated. Use meaningful filter parameter and load the data periodically.
 
  - ***What is the easiest way to develop software to download the data?***  
