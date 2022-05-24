@@ -3,12 +3,12 @@
 Table of Contents
 =================
 
- * [1) Overview](#1-overview)
- * [2) Web App](#2-web-app)
- * [3) Web API](#3-web-api)
- * [4) The JSON Schema](#4-the-json-schema)
- * [5) Sample Software](#5-sample-software)
- * [6) FAQ](#6-faq)
+    [1) Overview](#1-overview)
+    [2) Web App](#2-web-app)
+    [3) Web API](#3-web-api)
+    [4) The JSON Schema](#4-the-json-schema)
+    [5) Sample Software](#5-sample-software)
+    [6) FAQ](#6-faq)
 
 ---
 
@@ -535,7 +535,7 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
 
 ## 5) Sample Software
 
-Github repo: (https://github.com/mycalibration/mycalibration.github.io/)[https://github.com/mycalibration/mycalibration.github.io/]
+Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https://github.com/mycalibration/mycalibration.github.io/)
 
 - **/docs** - *This documentation*
 - **/schema**
@@ -563,8 +563,8 @@ Github repo: (https://github.com/mycalibration/mycalibration.github.io/)[https:/
  Use the [swagger file](https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json) to generate a client SW in your preferred language using generator-SW such as [https://editor.swagger.io/](https://editor.swagger.io/) (C#, Go, HTML, Java, Javascript, Python, PHP, Scala, Typescript...)
 
  - ***I have the JSON file. How do I parse these files to extract the information I need?***  
- The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See (https://json-schema.org/implementations.html#generators-from-schemas)[https://json-schema.org/implementations.html#generators-from-schemas]  
- We used (https://app.quicktype.io/)[https://app.quicktype.io/] to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
+ The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See [https://json-schema.org/implementations.html#generators-from-schemas](https://json-schema.org/implementations.html#generators-from-schemas)  
+ We used [https://app.quicktype.io/](https://app.quicktype.io/) to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
 
  - ***Where do I get a permanent access token from to access the API?***   
  The temporary and permanent access token can be seen in the web app under   ...***todo***...
