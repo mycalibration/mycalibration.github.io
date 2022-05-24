@@ -3,12 +3,12 @@
 Table of Contents
 =================
 
-   [ 1) Overview](#1-overview)
-   [ 2) Web App](#2-web-app)
-   [ 3) Web API](#3-web-api)
-   [ 4) The JSON Schema](#4-the-json-schema)
-   [ 5) Sample Software](#5-sample-software)
-   [ 6) FAQ](#6-faq)
+   [ 1) Overview](#1-overview)  
+   [ 2) Web App](#2-web-app)  
+   [ 3) Web API](#3-web-api)  
+   [ 4) The JSON Schema](#4-the-json-schema)  
+   [ 5) Sample Software](#5-sample-software)  
+   [ 6) FAQ](#6-faq)  
 
 ---
 
