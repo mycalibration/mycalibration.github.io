@@ -566,6 +566,18 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See [https://json-schema.org/implementations.html#generators-from-schemas](https://json-schema.org/implementations.html#generators-from-schemas)  
  We used [https://app.quicktype.io/](https://app.quicktype.io/) to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
 
+ - ***Is this platform secure? Are any standards used?***  
+ Yes. Customer data is only accessible after an individual login and cannot be seen by others. Thanks to best practices, audits and Microsoft's 'Azure Active Directory B2C' authentication technology, security is guaranteed.
+ 
+ The myCalibration platform uses the access, storage and authentication of users and data in/from a MICROSOFT (Azure) data center. This data center is in the EU and subject to EU regulations ( EU Data Protection Regulation [DSGVO] ). https://www.microsoft.com/de-de/TrustCenter/Privacy/gdpr/default.aspx
+
+ Be aware that there is no relevant 'personal data' stored.
+ 
+ What standards does Microsoft guarantee?
+ https://azure.microsoft.com/en-us/overview/trusted-cloud/ (overview)
+ https://azure.microsoft.com/en-us/blog/microsoft-azure-leads-the-industry-in-iso-certifications/ (overview)
+ List of standards: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings eg ISO 9001 , ISO 20000-1: 2011, ISO 2230, ISO 27001, ISO 27017, ISO 27018, BIR 2012 (Netherlands), UK G-Cloud, Argentina PDPA …
+
  - ***Where do I get a permanent access token from to access the API?***   
  The temporary and permanent access token can be seen in the web app under   ...***todo***...
 ---
