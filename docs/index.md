@@ -9,6 +9,7 @@ Table of Contents
    [ 4) The JSON Schema](#4-the-json-schema)  
    [ 5) Sample Software](#5-sample-software)  
    [ 6) FAQ](#6-faq)  
+   [ 7) FAQ](#7-roadmap)
 
 ---
 
@@ -579,5 +580,20 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  List of standards: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings eg ISO 9001 , ISO 20000-1: 2011, ISO 2230, ISO 27001, ISO 27017, ISO 27018, BIR 2012 (Netherlands), UK G-Cloud, Argentina PDPA …
 
  - ***Where do I get a permanent access token from to access the API?***   
- The temporary and permanent access token can be seen in the web app under   ...***todo***...
+ The temporary and permanent access token can be seen in the web app under [PROFILE]  ...***todo***...
 ---
+## 7) Roadmap
+
+ - **PROFILE** module to show
+   - API tokens
+   - Profile Settings
+   - SubCustomer Settings
+   - Roles
+ - Developer Mode
+ - Registration Page
+ - Sample Software
+   - LabView, C#, Python
+   - API
+   - Working with the JSON-Schema
+ - URL change
+ - YouTube Video?
