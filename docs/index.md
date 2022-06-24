@@ -9,7 +9,7 @@ Table of Contents
    [ 4) The JSON Schema](#4-the-json-schema)  
    [ 5) Sample Software](#5-sample-software)  
    [ 6) FAQ](#6-faq)  
-   [ 7) FAQ](#7-roadmap)
+   [ 7) Roadmap](#7-roadmap)
 
 ---
 
