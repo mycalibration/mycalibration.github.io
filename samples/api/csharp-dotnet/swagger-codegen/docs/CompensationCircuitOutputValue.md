@@ -1,0 +1,10 @@
+# IO.Swagger.Model.CompensationCircuitOutputValue
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**MeasuredValue** | [**PhysicalQuantity**](PhysicalQuantity.md) |  | [optional] 
+**NominalValue** | [**PhysicalQuantity**](PhysicalQuantity.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
