@@ -11,7 +11,7 @@ namespace myCalibrationAPISimpleSample
   internal class Program
   {
     private const string PermanentAccessToken = "bqCrDAQABACUKUpXST6JCEgPeStCyeHhfmNz/+yE29F+VbVeKl7eU....  ASK engineering@keller-druck.com for your permanent acces token or look into the profile settings at https://mycalibration.azurewebsites.net/";
-
+    
     static void Main(string[] args)
     {
       var baseUrl       = "https://mycalibrationapi.azurewebsites.net/v1/CalibrationData";
@@ -24,7 +24,7 @@ namespace myCalibrationAPISimpleSample
       //  - filters only calibration data from the year 2022 or older (order dispatch date)
       // https://mycalibration.github.io/
       var filterParameters = "?DateFilterType=greaterThan&Date=2022-04-01&ProductSeries=17SHX";
-      //filterParameters = "?ProductSeries=9L"; 9L often have MathMod data
+      //filterParameters = "?ProductSeries=9L"; //9L often have MathMod data
 
       // Generally, try to avoid loading more than 1000 calibration data as the query gets quite slow due to the serialization on the backend side. Exporting to a zip is faster (no serialization).
       // If unsure there is the possibility to quickly check for the amount of calibration data available with the /Count endpoint:
@@ -43,18 +43,24 @@ namespace myCalibrationAPISimpleSample
 
 
       string resultText;
-      var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
-      using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+      HttpWebResponse httpResponse;
+      try
       {
-        resultText = streamReader.ReadToEnd();
+        httpResponse = (HttpWebResponse)httpRequest.GetResponse();
       }
-
-      if (httpResponse.StatusCode != HttpStatusCode.OK)
+      catch (System.Net.WebException e)
       {
+        using WebResponse response = e.Response;
+        httpResponse = (HttpWebResponse)response;
+        Console.WriteLine("Error code: {0}", httpResponse.StatusCode);
         Console.WriteLine("Request is not successful. Please check your permanent access token or ask engineering@keller-druck.com");
         return;
       }
 
+      using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+      {
+        resultText = streamReader.ReadToEnd();
+      }
 
       List<KellerSensorData> calibrationData;
       try
