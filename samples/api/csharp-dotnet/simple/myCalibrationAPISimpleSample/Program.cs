@@ -26,6 +26,8 @@ namespace myCalibrationAPISimpleSample
             var filterParameters = "?DateFilterType=greaterThan&Date=2022-04-01&ProductSeries=17SHX"; 
             //filterParameters = "?ProductSeries=9L"; 9L often have MathMod data
 
+            // Generally, try to avoid loading more than 1000 calibration data as the query gets quite slow due to the serialization on the backend side. Exporting to a zip is faster (no serialization).
+            
             var url = baseUrl + filterParameters;
 
             var httpRequest = (HttpWebRequest)WebRequest.Create(url);
