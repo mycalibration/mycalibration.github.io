@@ -1,6 +1,6 @@
 # Overview
 
-- /docs  *Content of the documentation page: https://mycalibration.github.io/
+- /docs  *Content of the documentation page: https://mycalibration.github.io/*
 - /samples
   - /api
     - [/csharp-dotnet/simple](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/simple) *Simple C# example to show how to get data from the API and parse it.*
