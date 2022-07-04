@@ -14,13 +14,13 @@ Table of Contents
 ---
 
 ## 1) Overview
-'KELLER myCalibration' is a service for KELLER customers. Via KELLER myCalibration, customers can access digital calibration data of their KELLER sensors.
+KELLER's «myCalibration» is a data-platform for KELLER customers. Via KELLER «myCalibration», customers can access digital calibration data of their KELLER sensors.
 
 ### Data
 ![Web App UI](./media/json-example.jpg)
 
 #### Contents
-myCalibration is designed with data from various KELLER transducers and transmitters in mind. As an example, it can be used to hold information of Mathematical Compensation Models as well as X-line transmitter calibration data.
+«myCalibration» is designed with data from various KELLER transducers and transmitters in mind. As an example, it can be used to hold information of Mathematical Compensation Models as well as X-line transmitter calibration data.
 
 #### Format
 Calibration data is available in JSON file format. Thanks to its widespread use and a broad availability of programming libraries, this format allows for an easy and quick integration in customer software. What is more, as a quick check, JSON data can be inspected in any text editor.
@@ -552,7 +552,7 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
 
 ## 6) FAQ
 
- - ***Can I try out the myCalibration service?***  
+ - ***Can I try out the «myCalibration» service?***  
  Yes. Use the user 'Demo1234' and its password 'Demo1234'. This gives you access to a demo account with some valid demo data. 
 
  - ***How can I automatically download the data and store it into my database / SCADA / file system?***  
@@ -570,7 +570,7 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  - ***Is this platform secure? Are any standards used?***  
  Yes. Customer data is only accessible after an individual login and cannot be seen by others. Thanks to best practices, audits and Microsoft's 'Azure Active Directory B2C' authentication technology, security is guaranteed.
  
- The myCalibration platform uses the access, storage and authentication of users and data in/from a MICROSOFT (Azure) data center. This data center is in the EU and subject to EU regulations ( EU Data Protection Regulation [DSGVO] ). https://www.microsoft.com/de-de/TrustCenter/Privacy/gdpr/default.aspx
+ The «myCalibration» platform uses the access, storage and authentication of users and data in/from a MICROSOFT (Azure) data center. This data center is in the EU and subject to EU regulations ( EU Data Protection Regulation [DSGVO] ). https://www.microsoft.com/de-de/TrustCenter/Privacy/gdpr/default.aspx
 
  Be aware that there is no relevant 'personal data' stored.
  
