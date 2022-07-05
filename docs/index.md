@@ -580,20 +580,16 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  List of standards: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings eg ISO 9001 , ISO 20000-1: 2011, ISO 2230, ISO 27001, ISO 27017, ISO 27018, BIR 2012 (Netherlands), UK G-Cloud, Argentina PDPA …
 
  - ***Where do I get a permanent access token from to access the API?***   
- The temporary and permanent access token can be seen in the web app under [PROFILE]  ...***todo***...
+ The temporary and permanent access token can be seen in the web app under "Profile Settings" which can be found with the button of the company name.  
+ There is always the temporary access token that can be used for the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html).  
+ If the permanent access token is not visible for you then you might need to be given the needed authorization from engineering@keller-druck.com. Ask for an permanent access token.
+
+
 ---
 ## 7) Roadmap
 
- - **PROFILE** module to show
-   - API tokens
-   - Profile Settings
-   - SubCustomer Settings
-   - Roles
- - Developer Mode
  - Registration Page
  - Sample Software
-   - LabView, C#, Python
-   - API
+   - LabView
    - Working with the JSON-Schema
- - URL change
  - YouTube Video?
