@@ -37,10 +37,11 @@ namespace myCalibrationAPISimpleSample
       // Add the permanent access token to the header with the userOid key
       httpRequest.Headers["userOid"] = PermanentAccessToken;
 
-      // C# alternatives:
+      // Use httpRequest.Method = "PUT"; when using PUT instead of GET
+
+      // C# alternatives to HttpWebRequest:
       // HttpClient : HttpClient.DefaultRequestHeaders.Add("userOid", PermanentAccessToken);
       // WebClient  : WebClient.Headers.Add("userOid", PermanentAccessToken);
-
 
       string resultText;
       HttpWebResponse httpResponse;
