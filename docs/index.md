@@ -1,4 +1,4 @@
-![KELLER myCalibration Logo](./media/KELLER_Logo_myCalibration.png?raw=true "logo")
+![KELLER myCalibration Logo](./media/KELLER_Logo_myCalibration.png "logo")
 
 Table of Contents
 =================
