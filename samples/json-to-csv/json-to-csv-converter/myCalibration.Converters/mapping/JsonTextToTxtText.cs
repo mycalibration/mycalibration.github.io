@@ -79,10 +79,15 @@ public static class JsonTextToTxtText
                 }
             }
         }
+        else
+        {
+            coefficientsTextBuilder.AppendLine();
+            coefficientsTextBuilder.AppendLine("This JSON contains no MathMod calibration data nor reported measurements errors.");
+        }
 
 
         var measurementsTextBuilder = CreateTextBuilderWithHeaderInfo(kellerSensorData);
-        if (kellerSensorData.Measurements != null && kellerSensorData.Measurements.Count > 0)
+        if (kellerSensorData.Measurements != null && kellerSensorData.Measurements.Count > 0 && kellerSensorData.Measurements.All(_ => _.Raw != null))
         {
             List<Measurement> testRunMeasurements = kellerSensorData.Measurements;
 
@@ -161,6 +166,11 @@ public static class JsonTextToTxtText
                 }
                 measurementsTextBuilder.AppendLine();
             }
+        }
+        else
+        {
+            measurementsTextBuilder.AppendLine();
+            measurementsTextBuilder.AppendLine("This JSON contains no MathMod calibration data nor reported measurements errors.");
         }
 
         var measurementsText = measurementsTextBuilder.ToString();

@@ -81,12 +81,19 @@ public static class JsonTextToCsvText
                 }
             }
         }
+        else
+        {
+            coefficientsTextBuilder.AppendLine();
+            coefficientsTextBuilder.AppendLine("This JSON contains no MathMod calibration data nor reported measurements errors.");
+        }
         coefficientsTextBuilder.AppendLine();
 
 
 
         var measurementsTextBuilder = CreateTextBuilderWithHeaderInfo(kellerSensorData, separator);
-        if (kellerSensorData.Measurements != null && kellerSensorData.Measurements.Count > 0)
+        if (kellerSensorData.Measurements != null 
+            && kellerSensorData.Measurements.Count > 0 
+            && kellerSensorData.Measurements.All(_=>_.Raw != null))
         {
             List<Measurement> testRunMeasurements = kellerSensorData.Measurements;
 
@@ -102,7 +109,6 @@ public static class JsonTextToCsvText
                                      _.EnvironmentTarget["temperature"].Magnitude == allPossibleTemperatureValuesOrdered[t]);
                 }
             }
-
 
             var sample = measurementsOrderedByPressureAndTemperature[0, 0];
             var unit1 = Units.ToString(sample.EnvironmentTarget["temperature"].Unit); // Should be '°C'
@@ -126,7 +132,7 @@ public static class JsonTextToCsvText
                 {
                     for (var p = 0; p < allPossiblePressureValuesOrdered.Length; p++)
                     {
-//todo check with data/unit tests
+//todo check with more data/unit tests
                         var measurement = measurementsOrderedByPressureAndTemperature[p, t];
                         var value1 = measurement.Environment["temperature"].Magnitude;
                         var value2 = measurement.Raw["bridgeResistance"].Magnitude;
@@ -193,6 +199,11 @@ public static class JsonTextToCsvText
                 measurementsTextBuilder.AppendLine();
             }
         }
+        else
+        {
+            measurementsTextBuilder.AppendLine();
+            measurementsTextBuilder.AppendLine("This JSON contains no MathMod calibration data nor reported measurements errors.");
+        }
 
         var measurementsText = measurementsTextBuilder.ToString();
         var coefficientsText = coefficientsTextBuilder.ToString();
@@ -244,7 +255,7 @@ public static class JsonTextToCsvText
 
     private static string TryExtractModelTypeText(KellerSensorData data, string physicalMeasureResultName)
     {
-        string result = "No mathematical model stored.";
+        string result = "No mathematical model stored." + Environment.NewLine;
 
         if (data.CompensationMethods?.MathematicalModels != null && data.CompensationMethods.MathematicalModels.Any())
         {
