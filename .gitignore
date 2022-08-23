@@ -210,3 +210,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 samples/api/csharp-dotnet/simple/myCalibrationAPISimpleSample.sln
+/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters.Tests
+/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters
+/samples/json-to-csv/OnlineConverterBlazorApp/OnlineConverterBlazorApp/Properties/PublishProfiles
