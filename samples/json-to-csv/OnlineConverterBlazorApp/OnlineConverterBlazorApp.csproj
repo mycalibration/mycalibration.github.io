@@ -14,13 +14,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Converter\" />
+    <Folder Include="wwwroot\Converter\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="myCalibration.Converters">
-      <HintPath>Converter\myCalibration.Converters.dll</HintPath>
-    </Reference>
+    <None Include="wwwroot\Converter\myCalibration.Converters.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\Converter\myCalibration.Converters.pdb" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
