@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - docs/**
+      - samples/json-to-csv/**
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
