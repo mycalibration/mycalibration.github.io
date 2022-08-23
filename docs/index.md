@@ -538,16 +538,19 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
 
 Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https://github.com/mycalibration/mycalibration.github.io/)
 
-- **/docs**  *Content of the documentation page: https://mycalibration.github.io/*
+- **/docs**  *- Content of the documentation page https://mycalibration.github.io/*
 - **/samples**
   - **/api**
-    - **[/csharp-dotnet/simple](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/simple)** *Simple C# example to show how to get data from the API and parse it.*
-    - **[/csharp-dotnet/swagger-codegen](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/swagger-codegen)**  *Auto-Generated code based of the OpenAPI file. Generated on /editor.swagger.io*  
-    - **[/python/simple](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/python/simple/get-data.py)**  *Simple Pyton example to show how to get data from the API and parse it.* 
-    - **[/python/swagger-codegen](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/python/swagger-codegen)**    *Auto-Generated code based of the OpenAPI file. Generated on editor.swagger.io*  
-    - **[/labview/simple](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/labview/simple/)**  *LabView example to show the API access via permanent access token and how to extract data out of the response.* 
-  - **[/data-model/KellerSensorData.cs](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs)**  *C# class with the data schema structure implemented.*  
-- **[/schema/keller-sensor-data.schema.json](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json)**  *The myCalibration JSON schema*  
+    - [**/csharp-dotnet/simple**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/simple) *- Simple C# example to show how to get data from the API and parse it.*
+    - [**/csharp-dotnet/swagger-codegen**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/swagger-codegen)  *- Auto-Generated code based of the OpenAPI file. Generated on /editor.swagger.io*  
+    - [**/python/simple**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/python/simple/get-data.py)  *- Simple Pyton example to show how to get data from the API and parse it.* 
+    - [**/python/swagger-codegen**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/python/swagger-codegen)    *- Auto-Generated code based of the OpenAPI file. Generated on editor.swagger.io*  
+    - [**/labview/simple**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/labview/simple/)  *- LabView example to show the API access via permanent access token and how to extract data out of the response.* 
+  - [**/data-model/KellerSensorData.cs**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs)  *- C# class with the data schema structure implemented.*  
+  - **/json-to-csv**
+    - [**/json-to-csv-converter**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/)  *- Converter source to demonstrate the conversion from the JSON data to the old obsolete text/CSV file data.*
+    - [**/ConverterUsageSample/Program.cs**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/json-to-csv/ConverterUsageSample/Program.cs)  *- Example usage of the converter.*
+- [**/schema/keller-sensor-data.schema.json**](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json)  *- The myCalibration JSON schema*  
 
 ---
 
@@ -567,6 +570,10 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  - ***I have the JSON file. How do I parse these files to extract the information I need?***  
  The JSON files underlie a [JSON schema](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). This schema can be used to generate code artifacts that help to parse the information. See [https://json-schema.org/implementations.html#generators-from-schemas](https://json-schema.org/implementations.html#generators-from-schemas)  
  We used [https://app.quicktype.io/](https://app.quicktype.io/) to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
+ As an example, the JSON data is parsed and converted to the old txt/CSV files in [the converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters).
+ 
+ - ***But I use these TestRun.txt and ....csv files for years. Why should I change to the JSON file?***
+ Changing to the JSON files is not that difficult for a developer given the many examples. [The converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters) shows how to access the JSON data and extract the needed (coefficients) data.
 
  - ***Is this platform secure? Are any standards used?***  
  Yes. Customer data is only accessible after an individual login and cannot be seen by others. Thanks to best practices, audits and Microsoft's 'Azure Active Directory B2C' authentication technology, security is guaranteed.
@@ -589,4 +596,5 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
 ---
 ## 7) Roadmap
 
+ - Converter example
  - Registration Page
