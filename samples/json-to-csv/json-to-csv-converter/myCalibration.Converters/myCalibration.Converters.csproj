@@ -7,13 +7,17 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>KellerAg.Shared.$(AssemblyName)</PackageId>
     <Title>$(AssemblyName)</Title>
-    <Authors>Sebastian Mojado</Authors>
+    <Authors>cBashTn</Authors>
     <Company>KELLER Druckmesstechnik</Company>
     <RepositoryUrl>https://github.com/mycalibration/mycalibration.github.io</RepositoryUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageProjectUrl>https://github.com/mycalibration/mycalibration.github.io</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
+    <Version>0.8.326</Version>
+    <PackageTags>myCalibration; KELLER; Druckmesstechnik; Pressure; </PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
