@@ -63,7 +63,6 @@ The OpenAPI specification page is: [https://mycalibrationapi.azurewebsites.net/s
 All the calibration data can be exported as
 - JSON meta-information (header only) 
 - zip file with the filtered and compressed JSON files (header+data)
-- brotli file with the filtered and compressed JSON files (header+data)
 
 The Swagger JSON file can be found here: [https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json](https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json)
 
@@ -79,6 +78,7 @@ Responds with the filtered calibration data in JSON form. See [filter parameters
 
 #### GET /v1/CalibrationData/Export
 Exports the filtered calibration data as ZIP or BROTLI file with the calibration files (JSON)
+Brotli-file-type is not supported as of now.
 
 | Name | Located in | Description | Required | Schema |
 | ---- | ---------- | ----------- | -------- | ---- |
@@ -550,7 +550,10 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
   - **/json-to-csv**
     - [**/json-to-csv-converter**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/)  *- Converter source to demonstrate the conversion from the JSON data to the old obsolete text/CSV file data.*
     - [**/ConverterUsageSample/Program.cs**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/json-to-csv/ConverterUsageSample/Program.cs)  *- Example usage of the converter.*
+    - [**/OnlineConverterBlazorApp**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/json-to-csv/OnlineConverterBlazorApp/)  *- Another example usage of the converter by creating a Blazor Web Assembly App that converts the JSON to the old text files.*
 - [**/schema/keller-sensor-data.schema.json**](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json)  *- The myCalibration JSON schema*  
+
+- Online 'JSON to old text files'-converter : https://mycalibration.github.io/converter
 
 ---
 
@@ -574,6 +577,7 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  
  - ***But I use these TestRun.txt and ....csv files for years. Why should I change to the JSON file?***
  Changing to the JSON files is not that difficult for a developer given the many examples. [The converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters) shows how to access the JSON data and extract the needed (coefficients) data.
+ The [online converter](https://mycalibration.github.io/converter) also demonstrates the possibility to extract the needed data from the JSON files.
 
  - ***Is this platform secure? Are any standards used?***  
  Yes. Customer data is only accessible after an individual login and cannot be seen by others. Thanks to best practices, audits and Microsoft's 'Azure Active Directory B2C' authentication technology, security is guaranteed.
@@ -595,6 +599,5 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
 
 ---
 ## 7) Roadmap
-
- - Converter example
+ - Terms Of Service
  - Registration Page
