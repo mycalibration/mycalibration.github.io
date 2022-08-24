@@ -12,6 +12,8 @@
     <RepositoryUrl>https://github.com/mycalibration/mycalibration.github.io</RepositoryUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/mycalibration/mycalibration.github.io</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
