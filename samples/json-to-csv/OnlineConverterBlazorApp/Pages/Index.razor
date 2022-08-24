@@ -17,11 +17,11 @@
         <RadzenTabsItem Text="TEXT">
             <RadzenCard>
                 <label>Converted result: </label>
-                <div class="row justify-content-start">
+                <div class="row justify-content-start" Style="font-family: Consolas,monaco,monospace;">
                     <div class="col-4">
                         <textarea class="form-control" rows="40" @bind="_convertedCoefficientsTxt"></textarea>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <textarea class="form-control" rows="40" @bind="_convertedMeasurementTxt"></textarea>
                     </div>
                 </div>
@@ -31,11 +31,11 @@
         <RadzenTabsItem Text="CSV">
             <RadzenCard>
                 <label>Converted result: </label>
-                <div class="row justify-content-start">
-                    <div class="col-4">
+                <div class="row justify-content-start" Style="font-family: Consolas,monaco,monospace;">
+                    <div class="col-3">
                         <textarea class="form-control" rows="40" @bind="_convertedCoefficientsCsv"></textarea>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                         <textarea class="form-control" rows="40" @bind="_convertedMeasurementCsv"></textarea>
                     </div>
                 </div>
