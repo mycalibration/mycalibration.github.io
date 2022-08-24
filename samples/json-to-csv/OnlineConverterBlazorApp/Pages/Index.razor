@@ -2,47 +2,53 @@
 
 @implements IDisposable
 
+<div class="col-6" style="max-width: 50em;">
+    <RadzenCard>
+        <label>Add myCalibration JSON content and press the convert button!</label>
+        <textarea class="form-control" rows="20" @bind="InputContentText"></textarea>
+    </RadzenCard>
+</div>
 
-<PageTitle>Index</PageTitle>
+<div class="btn-group" role="group">
+    <RadzenButton Style="background-color:#a3d8e7;margin-top: 10px; margin-bottom: 10px" Click="@(_ => Convert())" Text="CONVERT"></RadzenButton>
+    <div class="btn-group" role="group">
+        <RadzenSplitButton Style="margin: 10px;" Click=@(args => CSVSeperatorButtonClick(args)) Text="CSV Seperator">
+            <ChildContent>
+                <RadzenSplitButtonItem Text=";" Value=";" />
+                <RadzenSplitButtonItem Text="," Value="," />
+            </ChildContent>
+        </RadzenSplitButton>
+    </div>
+</div>
 
-<RadzenCard>
-    <label>Add myCalibration JSON content and convert</label>
-    <textarea class="form-control" rows="20" @bind="InputContentText"></textarea>
-</RadzenCard>
-
-<RadzenButton Style="background-color:#a3d8e7;margin: 20px;" Click="@(_ => Convert())" Text="CONVERT"></RadzenButton>
-
-<RadzenTabs>
+<RadzenTabs style="max-width: 100em;">
     <Tabs>
         <RadzenTabsItem Text="TEXT">
-            <RadzenCard>
-                <label>Converted result: </label>
-                <div class="row justify-content-start" Style="font-family: Consolas,monaco,monospace;">
-                    <div class="col-4">
-                        <textarea class="form-control" rows="40" @bind="_convertedCoefficientsTxt"></textarea>
-                    </div>
-                    <div class="col-6">
-                        <textarea class="form-control" rows="40" @bind="_convertedMeasurementTxt"></textarea>
-                    </div>
+            <label>Converted result: </label>
+            <div class="d-flex flex-wrap" Style="font-family: Consolas,monaco,monospace;">
+                <div class="col">
+                    <textarea class="form-control" rows="40" @bind="_convertedCoefficientsTxt"></textarea>
                 </div>
-            </RadzenCard>
+                <div class="col">
+                    <textarea class="form-control" rows="40" @bind="_convertedMeasurementTxt"></textarea>
+                </div>
+            </div>
         </RadzenTabsItem>
 
         <RadzenTabsItem Text="CSV">
-            <RadzenCard>
-                <label>Converted result: </label>
-                <div class="row justify-content-start" Style="font-family: Consolas,monaco,monospace;">
-                    <div class="col-3">
-                        <textarea class="form-control" rows="40" @bind="_convertedCoefficientsCsv"></textarea>
-                    </div>
-                    <div class="col-5">
-                        <textarea class="form-control" rows="40" @bind="_convertedMeasurementCsv"></textarea>
-                    </div>
+            <label>Converted result: </label>
+            <div class="row justify-content-start" Style="font-family: Consolas,monaco,monospace;">
+                <div class="col">
+                    <textarea class="form-control" rows="40" @bind="_convertedCoefficientsCsv"></textarea>
                 </div>
-            </RadzenCard>
+                <div class="col">
+                    <textarea class="form-control" rows="40" @bind="_convertedMeasurementCsv"></textarea>
+                </div>
+            </div>
         </RadzenTabsItem>
     </Tabs>
 </RadzenTabs>
+
 @code {
 
     protected override void OnInitialized()
@@ -50,7 +56,7 @@
         InputContentText = ExampleInput;
     }
 
-    public string InputContentText { get; set; }
+    public string? InputContentText { get; set; }
     public void Dispose() { }
 
 
@@ -63,12 +69,38 @@
     private string _convertedCoefficientsTxt = "";
     private string _convertedCoefficientsCsv = "";
 
+    private char _separator = ';';
+
     private void Convert()
     {
-        var c = myCalibration.Converters.MyCalibrationJsonConvert.JsonTextToAll(InputContentText);
-        _convertedCoefficientsTxt = c.CoefficientsTxtText;
-        _convertedCoefficientsCsv = c.CoefficientsCsvText;
-        _convertedMeasurementTxt = c.MeasurementsTxtText;
-        _convertedMeasurementCsv = c.MeasurementsCsvText;
+        try
+        {
+            var c = myCalibration.Converters.MyCalibrationJsonConvert.JsonTextToAll(InputContentText, _separator);
+            _convertedCoefficientsTxt = c.CoefficientsTxtText;
+            _convertedCoefficientsCsv = c.CoefficientsCsvText;
+            _convertedMeasurementTxt = c.MeasurementsTxtText;
+            _convertedMeasurementCsv = c.MeasurementsCsvText;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            _convertedCoefficientsTxt = $"Unfortunately an exception happened. To fix this, please send the JSON content to engineering@keller-druck.com! Thank you! {Environment.NewLine}{e.Message} - {e.InnerException}";
+        }
+
     }
+
+    private void CSVSeperatorButtonClick(RadzenSplitButtonItem args)
+    {
+        try
+        {
+            _separator = args.Value.ToCharArray()[0];
+        }
+        catch
+        {
+            _separator = ';';
+        }
+        
+
+    }
+
 }
