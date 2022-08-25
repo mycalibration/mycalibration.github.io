@@ -2,9 +2,18 @@ name: Converter to Nuget Pusher
 
 on:
   push:
-    branches: [ "nuget-release" ]
+    branches:
+      - main
+    paths:
+      - 'samples/json-to-csv/**'
+    paths-ignore:
+      - 'docs/**'
+      - 'schema/**'
+
   pull_request:
-    branches: [ "nuget-release" ]
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
 
 jobs:
   build:
