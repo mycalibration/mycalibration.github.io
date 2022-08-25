@@ -65,7 +65,7 @@ jobs:
       # flags of the regex
       # flags: # optional, default is g
       # replacement string
-        replacement: \<Version\>${{steps.versioning.outputs.version}}\<\/Version\>
+        replacement: <Version>${{steps.versioning.outputs.version}}</Version>
       # Files to be replaced(regex)
         include: 'myCalibration.Converters.csproj'
       # Files not to be replaced(regex)
