@@ -47,7 +47,7 @@ jobs:
     # A string which, if present in a git commit, indicates that a change represents a minor (feature) change. Wrap with '/' to match using a regular expression.
     #  minor_pattern: # default is (MINOR)
     # Pattern to use when formatting output version
-        version_format: "1.0.${{steps.vers.outputs.version}}"
+        version_format: "1.${{steps.vers.outputs.version}}"
     # Path to check for changes. If any changes are detected in the path the 'changed' output will true. Enter multiple paths separated by spaces.
     #  change_path: # optional
     # Use to create a named sub-version. This value will be appended to tags created for this version.
