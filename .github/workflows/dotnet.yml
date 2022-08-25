@@ -6,9 +6,9 @@ on:
       - main
     paths:
       - 'samples/json-to-csv/**'
-    paths-ignore:
-      - 'docs/**'
-      - 'schema/**'
+#    paths-ignore:
+#      - 'docs/**'
+#      - 'schema/**'
 
   pull_request:
     types: [opened, synchronize, reopened, closed]
