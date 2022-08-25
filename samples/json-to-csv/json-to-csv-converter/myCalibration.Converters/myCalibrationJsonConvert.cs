@@ -1,4 +1,4 @@
-﻿using KellerSensorDataExchange;
+using KellerSensorDataExchange;
 using myCalibration.Converters.data_model;
 
 namespace myCalibration.Converters
