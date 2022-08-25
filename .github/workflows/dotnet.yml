@@ -27,7 +27,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore /samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj
     - name: Build
       run: dotnet build /samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj --no-restore -p:Version=0.8.333.1
 
