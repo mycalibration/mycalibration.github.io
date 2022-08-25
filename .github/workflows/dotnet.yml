@@ -22,7 +22,49 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    - name: Git Semantic Version
+      uses: PaulHatch/semantic-version@v5.0.0-alpha2
+      id: versioning
+      with:
+    # Set to specify a specific branch, default is the current HEAD
+        branch: main
+    # The prefix to use to identify tags
+        tag_prefix: "" # optional, default is v
+    # A string which, if present in a git commit, indicates that a change represents a major (breaking) change. Wrap with '/' to match using a regular expression.
+    #  major_pattern: # default is (MAJOR)
+    # A string which, if present in a git commit, indicates that a change represents a minor (feature) change. Wrap with '/' to match using a regular expression.
+    #  minor_pattern: # default is (MINOR)
+    # Pattern to use when formatting output version
+        version_format: "${major}.${minor}.${patch}.${increment}"
+    # Path to check for changes. If any changes are detected in the path the 'changed' output will true. Enter multiple paths separated by spaces.
+    #  change_path: # optional
+    # Use to create a named sub-version. This value will be appended to tags created for this version.
+    #  namespace: # optional
+    # If true, every commit will be treated as a bump to the version.
+   #   bump_each_commit: # default is false
+    # If true, the body of commits will also be searched for major/minor patterns to determine the version type.
+    #  search_commit_body: # default is false
+    # The output method used to generate list of users, 'csv' or 'json'. Default is 'csv'.
+    #  user_format_type: # default is csv
+    
     - uses: actions/checkout@v3
+    - name: File Regex Replace
+      uses: mingjun97/file-regex-replace@v1
+      with:
+      # regex to apply(regex)
+        regex: '\<Version\>[0-9]+\.[0-9]+\.[0-9]+\<\/Version\>'
+      # flags of the regex
+      # flags: # optional, default is g
+      # replacement string
+        replacement: \<Version\>${{steps.versioning.outputs.version}}\<\/Version\>
+      # Files to be replaced(regex)
+        include: 'myCalibration.Converters.csproj'
+      # Files not to be replaced(regex)
+      # exclude: # optional, default is .^
+      # String file encoding
+      # encoding: # optional, default is utf8
+      # Path to the folder to be replaced
+        path: './samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/'
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
@@ -30,8 +72,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj
     - name: Build
-      run: dotnet build ./samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj --no-restore -p:Version=0.8.333.1
-
+      run: dotnet build ./samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj --no-restore
     - name: Publish NuGet
       # You may pin to the exact commit or the version.
       # uses: brandedoutcast/publish-nuget@c12b8546b67672ee38ac87bea491ac94a587f7cc
