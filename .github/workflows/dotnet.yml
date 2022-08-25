@@ -3,12 +3,8 @@ name: Converter to Nuget Pusher
 on:
   push:
     branches: [ "nuget-release" ]
-    paths:
-    - /samples/json-to-csv/json-to-csv-converter/
   pull_request:
     branches: [ "nuget-release" ]
-    paths:
-    - /samples/json-to-csv/json-to-csv-converter/
 
 jobs:
   build:
