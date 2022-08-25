@@ -48,6 +48,15 @@ jobs:
     #  user_format_type: # default is csv
     
     - uses: actions/checkout@v3
+    
+    - name: Read file contents
+      id: read_file
+      uses: andstor/file-reader-action@v1
+      with:
+        path: "./samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj"
+    - name: File contents
+      run: echo "${ steps.read_file.outputs.contents }"
+      
     - name: File Regex Replace
       uses: mingjun97/file-regex-replace@v1
       with:
@@ -64,7 +73,15 @@ jobs:
       # String file encoding
       # encoding: # optional, default is utf8
       # Path to the folder to be replaced
-        path: './samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/'
+        path: './samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/'       
+    - name: Read file contents 2
+      id: read_file2
+      uses: andstor/file-reader-action@v1
+      with:
+        path: "./samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/myCalibration.Converters.csproj"
+    - name: File contents 2
+      run: echo "${ steps.read_file2.outputs.contents }"
+      
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
       with:
