@@ -5,3 +5,4 @@ This converter library is shared on nuget on https://www.nuget.org/packages/Kell
 ### Prerequisites:
 - .NET 6
 - Newtonsoft.Json (>= 13.0.1)
+
