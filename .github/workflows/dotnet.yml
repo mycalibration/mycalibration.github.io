@@ -1,12 +1,12 @@
-name: .NET
+name: Converter to Nuget Pusher
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "nuget-release" ]
     paths:
     - /samples/json-to-csv/json-to-csv-converter/
   pull_request:
-    branches: [ "main" ]
+    branches: [ "nuget-release" ]
     paths:
     - /samples/json-to-csv/json-to-csv-converter/
 
