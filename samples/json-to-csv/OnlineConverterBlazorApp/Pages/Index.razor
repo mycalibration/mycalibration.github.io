@@ -1,11 +1,13 @@
 ﻿@page "/"
 
+@using Newtonsoft.Json
 @implements IDisposable
 
 <div class="col-6" style="max-width: 50em;">
     <RadzenCard>
-        <label>Add myCalibration JSON content and press the convert button!</label>
+        <label>Add myCalibration JSON content and press the convert button</label>
         <textarea class="form-control" rows="20" @bind="InputContentText"></textarea>
+        <RadzenButton Style="background-color:#a3d8e7;margin-top: 10px;width:200px" Click="@(_ => Format())" Text="FORMAT JSON"></RadzenButton>
     </RadzenCard>
 </div>
 
@@ -85,6 +87,21 @@
         {
             Console.WriteLine(e);
             _convertedCoefficientsTxt = $"Unfortunately an exception happened. To fix this, please send the JSON content to engineering@keller-druck.com! Thank you! {Environment.NewLine}{e.Message} - {e.InnerException}";
+        }
+
+    }
+
+    private void Format()
+    {
+        try
+        {
+            var obj = JsonConvert.DeserializeObject(InputContentText);
+            InputContentText = JsonConvert.SerializeObject(obj, Formatting.Indented);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            _convertedCoefficientsTxt = $"Unfortunately an exception happened during the formatting. To fix this, please send the JSON content to engineering@keller-druck.com! Thank you! {Environment.NewLine}{e.Message} - {e.InnerException}";
         }
 
     }
