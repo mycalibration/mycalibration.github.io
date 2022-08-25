@@ -22,6 +22,18 @@ jobs:
     runs-on: windows-latest
 
     steps:
+    
+    - name: Auto Increment Semver Action
+      uses: MCKanpolat/auto-semver-action@1.0.5
+      id: vers
+      with:
+        releaseType: patch 
+        incrementPerCommit: false
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Next Release Number
+      run: echo ${{ steps.vers.outputs.version }}
+      
     - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v5.0.0-alpha2
       id: versioning
@@ -35,7 +47,7 @@ jobs:
     # A string which, if present in a git commit, indicates that a change represents a minor (feature) change. Wrap with '/' to match using a regular expression.
     #  minor_pattern: # default is (MINOR)
     # Pattern to use when formatting output version
-        version_format: "${major}.${minor}.${patch}.${increment}"
+        version_format: "1.0.${{steps.vers.outputs.version}}"
     # Path to check for changes. If any changes are detected in the path the 'changed' output will true. Enter multiple paths separated by spaces.
     #  change_path: # optional
     # Use to create a named sub-version. This value will be appended to tags created for this version.
