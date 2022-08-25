@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'samples/json-to-csv/**'
+      - 'samples/json-to-csv/OnlineConverterBlazorApp/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
