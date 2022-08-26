@@ -3,13 +3,13 @@
 Table of Contents
 =================
 
-   [ 1) Overview](#1-overview)  
-   [ 2) Web App](#2-web-app)  
-   [ 3) Web API](#3-web-api)  
-   [ 4) The JSON Schema](#4-the-json-schema)  
-   [ 5) Sample Software](#5-sample-software)  
-   [ 6) FAQ](#6-faq)  
-   [ 7) Roadmap](#7-roadmap)
+   [1) Overview](#1-overview)  
+   [2) Web App](#2-web-app)  
+   [3) Web API](#3-web-api)  
+   [4) The JSON Schema](#4-the-json-schema)  
+   [5) Sample Software](#5-sample-software)  
+   [6) FAQ](#6-faq)  
+   [7) Roadmap](#7-roadmap)
 
 ---
 
@@ -108,10 +108,12 @@ If optionalSearchParameter or its fields are null then the returned number is th
 You can use this to quickly find out how many files you request with a given query.
 
 #### GET /v1/CalibrationData/List
+
 Get a list of all identifier strings of the calibration data set defined by the optional search parameters. See [filter/search parameters](#filter-parameters).
 These identifier strings (***IncludedIds***) can then used as input as filter parameter for a query in ***GET /v1/CalibrationData***
 
 ### PUT /v1/CalibrationData/New
+
 WARNING: Only use when you know what you do. Better ask engineering@keller-druck.com
 Gathers all NEW data. 'New data' is calibration data that was never requested with this request. A second request might return an empty list.
 Optionally, if the new data could not be stored, then with 'countOfHoursDataWasAlreadyRequested' the data requested will be shown again back to the given hours.
@@ -125,7 +127,42 @@ Optionally, 'countOfHoursDataWasAlreadyAssigned' can be used
 
 ### MefistoViewModel
 
-Example: ```{"id":28651,"customerName":"DemoData Inc.","customerNumber":12345678,"subCustomerNumber":0,"remarks":"","serialNumber":"23650","productNumber":"123856.1113","productType":"PA-23R","pressureType":"Pa","productSeries":"23R","compensatedTemperatureRangeMin":15.0,"compensatedTemperatureRangeMax":70.0,"compensatedTemperatureRangeUnit":"C","compensatedPressureRangeMin":0.0,"compensatedPressureRangeMax":1.0,"compensatedPressureRangeUnit":"Bar","electricSupplyMin":4.5,"electricSupplyMax":24.0,"electricSupplyMagnitude":0.0,"electricSupplyUnit":"V","orderNumber":9990740,"orderPosition":1,"orderTargetDispatchDate":"2017-05-26T00:00:00","customerOrderNumber":"Cust-9990740-123","customerReferenceNumber":"ABC","customerProductType":"123451-1113","subCustomerOrderNumber":null,"subCustomerOrderPosition":null,"assignedToSubCustomerDateUtc":null}```
+Mefisto = MEtainfo for FIle STOrage
+Example:
+
+```
+{
+  "id": 28651,
+  "customerName": "DemoData Inc.",
+  "customerNumber": 12345678,
+  "subCustomerNumber": 0,
+  "remarks": "",
+  "serialNumber": "23650",
+  "productNumber": "123856.1113",
+  "productType": "PA-23R",
+  "pressureType": "Pa",
+  "productSeries": "23R",
+  "compensatedTemperatureRangeMin": 15.0,
+  "compensatedTemperatureRangeMax": 70.0,
+  "compensatedTemperatureRangeUnit": "C",
+  "compensatedPressureRangeMin": 0.0,
+  "compensatedPressureRangeMax": 1.0,
+  "compensatedPressureRangeUnit": "Bar",
+  "electricSupplyMin": 4.5,
+  "electricSupplyMax": 24.0,
+  "electricSupplyMagnitude": 0.0,
+  "electricSupplyUnit": "V",
+  "orderNumber": 9990740,
+  "orderPosition": 1,
+  "orderTargetDispatchDate": "2017-05-26T00:00:00",
+  "customerOrderNumber": "Cust-9990740-123",
+  "customerReferenceNumber": "ABC",
+  "customerProductType": "123451-1113",
+  "subCustomerOrderNumber": null,
+  "subCustomerOrderPosition": null,
+  "assignedToSubCustomerDateUtc": null
+}
+```
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
@@ -619,10 +656,10 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
 
 - ***Is this platform secure? Are any standards used?***  
  Yes. Customer data is only accessible after an individual login and cannot be seen by others. Thanks to best practices, audits and Microsoft's 'Azure Active Directory B2C' authentication technology, security is guaranteed.
- 
- The «myCalibration» platform uses the access, storage and authentication of users and data in/from a MICROSOFT (Azure) data center. This data center is in the EU and subject to EU regulations ( EU Data Protection Regulation [DSGVO] ). <https://www.microsoft.com/de-de/TrustCenter/Privacy/gdpr/default.aspx>
 
- Be aware that there is no relevant 'personal data' stored.
+  The «myCalibration» platform uses the access, storage and authentication of users and data in/from a MICROSOFT (Azure) data center. This data center is in the EU and subject to EU regulations ( EU Data Protection Regulation [DSGVO] ). <https://www.microsoft.com/de-de/TrustCenter/Privacy/gdpr/default.aspx>
+
+  Be aware that there is no relevant 'personal data' stored.
  What standards does Microsoft guarantee?
  <https://azure.microsoft.com/en-us/overview/trusted-cloud/> (overview)
  <https://azure.microsoft.com/en-us/blog/microsoft-azure-leads-the-industry-in-iso-certifications/> (overview)
