@@ -24,11 +24,11 @@ jobs:
     steps:
     
     - name: Auto Increment Semver Action
-      uses: MCKanpolat/auto-semver-action@1.0.5
+      uses: MCKanpolat/auto-semver-action@1.0.7
       id: vers
       with:
         releaseType: patch 
-        incrementPerCommit: false
+        incrementPerCommit: true
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Next Release Number
