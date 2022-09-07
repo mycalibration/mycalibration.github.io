@@ -147,7 +147,7 @@ public static class JsonTextToTxtText
             description = TryExtractModelTypeFormula(kellerSensorData, "temperature");
 
             measurementsTextBuilder.AppendLine($"{$"{description}",TextAlignmentDistanceHeader}{$"press",10}{$"Rb'",10}{$"t meas",10}{$"t calc",10}{$"deviat",10}");
-            measurementsTextBuilder.AppendLine($"{$"",TextAlignmentDistanceHeader}{$"[{unit4}]",10}{$"[{unit2}]",10}{$"[{unit1}]",10}{$"[{unit1}]",10}{$"[{unit4}]",10}");
+            measurementsTextBuilder.AppendLine($"{$"",TextAlignmentDistanceHeader}{$"[{unit4}]",10}{$"[{unit2}]",10}{$"[{unit1}]",10}{$"[{unit1}]",10}{$"[{unit1}]",10}");
 
             for (int t = 0; t < allPossibleTemperatureValuesOrdered.Length; t++)
             {
