@@ -6,15 +6,10 @@ on:
     branches:
       - main
     paths:
-      - 'samples/json-to-csv/**'
+      - 'samples/json-to-csv/json-to-csv-converter/myCalibration.Converters/**'
 #    paths-ignore:
 #      - 'docs/**'
 #      - 'schema/**'
-
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
 
 jobs:
   build:
