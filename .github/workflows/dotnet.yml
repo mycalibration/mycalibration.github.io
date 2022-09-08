@@ -30,7 +30,7 @@ jobs:
         token: ${{secrets.github_token}}        
         
     - name: Print new build number
-      run: echo "Build number is ${env:BUILD_NUMBER}"
+      run: echo "Build number is ${{ steps.vers.outputs.build_number }}"
       
     - name: Git Semantic Version
       uses: PaulHatch/semantic-version@v5.0.0-alpha2
@@ -45,7 +45,7 @@ jobs:
     # A string which, if present in a git commit, indicates that a change represents a minor (feature) change. Wrap with '/' to match using a regular expression.
     #  minor_pattern: # default is (MINOR)
     # Pattern to use when formatting output version
-        version_format: "1.30.${env:BUILD_NUMBER}"
+        version_format: "1.30.${{ steps.vers.outputs.build_number }}"
     # Path to check for changes. If any changes are detected in the path the 'changed' output will true. Enter multiple paths separated by spaces.
     #  change_path: # optional
     # Use to create a named sub-version. This value will be appended to tags created for this version.
