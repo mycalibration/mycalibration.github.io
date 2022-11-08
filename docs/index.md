@@ -1,4 +1,4 @@
-![KELLER myCalibration Logo](./media/KELLER_Logo_myCalibration.png "logo")
+![KELLER myCalibration Logo](./media/MyCalibration_transp.png "logo")
 
 Table of Contents
 =================
@@ -674,5 +674,5 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
 
 ## 7) Roadmap
 
-- Terms Of Service
-- Registration Page
+- Product Notification Change
+- Add MathMod number to API + Web App
