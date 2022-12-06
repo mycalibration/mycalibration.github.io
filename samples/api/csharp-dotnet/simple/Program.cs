@@ -66,7 +66,7 @@ namespace myCalibrationAPISimpleSample
       List<KellerSensorData> calibrationData;
       try
       {
-        calibrationData = JsonConvert.DeserializeObject<List<KellerSensorData>>(resultText);
+        calibrationData = JsonConvert.DeserializeObject<List<KellerSensorData>>(resultText, Converter.Settings);
       }
       catch (Exception e)
       {
