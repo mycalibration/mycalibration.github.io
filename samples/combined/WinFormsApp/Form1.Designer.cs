@@ -31,15 +31,20 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCallApiForHeaders = new System.Windows.Forms.Button();
+            this.buttonCallApiForJsonData = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelLog = new System.Windows.Forms.Label();
+            this.testApiButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 592);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 716);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1027, 245);
+            this.richTextBox1.Size = new System.Drawing.Size(1421, 259);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -48,33 +53,92 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(256, 25);
+            this.label1.Size = new System.Drawing.Size(276, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Enter Permament Access Token";
+            this.label1.Text = "1) Enter Permament Access Token";
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(27, 50);
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(27, 53);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(972, 31);
+            this.textBox1.Size = new System.Drawing.Size(1215, 31);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button1
+            // buttonCallApiForHeaders
             // 
-            this.button1.Location = new System.Drawing.Point(27, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCallApiForHeaders.Location = new System.Drawing.Point(27, 119);
+            this.buttonCallApiForHeaders.Name = "buttonCallApiForHeaders";
+            this.buttonCallApiForHeaders.Size = new System.Drawing.Size(302, 34);
+            this.buttonCallApiForHeaders.TabIndex = 3;
+            this.buttonCallApiForHeaders.Text = "Call API and get metadata";
+            this.buttonCallApiForHeaders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCallApiForHeaders.UseVisualStyleBackColor = true;
+            this.buttonCallApiForHeaders.Click += new System.EventHandler(this.buttonCallApiForHeaders_Click);
+            // 
+            // buttonCallApiForJsonData
+            // 
+            this.buttonCallApiForJsonData.Location = new System.Drawing.Point(27, 264);
+            this.buttonCallApiForJsonData.Name = "buttonCallApiForJsonData";
+            this.buttonCallApiForJsonData.Size = new System.Drawing.Size(302, 34);
+            this.buttonCallApiForJsonData.TabIndex = 4;
+            this.buttonCallApiForJsonData.Text = "Call API and get filtered JSON data";
+            this.buttonCallApiForJsonData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCallApiForJsonData.UseVisualStyleBackColor = true;
+            this.buttonCallApiForJsonData.Click += new System.EventHandler(this.buttonCallApiForJsonData_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 91);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "2)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 25);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "3)";
+            // 
+            // labelLog
+            // 
+            this.labelLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelLog.AutoSize = true;
+            this.labelLog.Location = new System.Drawing.Point(12, 688);
+            this.labelLog.Name = "labelLog";
+            this.labelLog.Size = new System.Drawing.Size(42, 25);
+            this.labelLog.TabIndex = 7;
+            this.labelLog.Text = "Log";
+            // 
+            // testApiButton
+            // 
+            this.testApiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.testApiButton.Location = new System.Drawing.Point(1273, 53);
+            this.testApiButton.Name = "testApiButton";
+            this.testApiButton.Size = new System.Drawing.Size(136, 34);
+            this.testApiButton.TabIndex = 8;
+            this.testApiButton.Text = "Test API Call";
+            this.testApiButton.UseVisualStyleBackColor = true;
+            this.testApiButton.Click += new System.EventHandler(this.testApiButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 837);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1421, 975);
+            this.Controls.Add(this.testApiButton);
+            this.Controls.Add(this.labelLog);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonCallApiForJsonData);
+            this.Controls.Add(this.buttonCallApiForHeaders);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
@@ -90,6 +154,11 @@
         private RichTextBox richTextBox1;
         private Label label1;
         private TextBox textBox1;
-        private Button button1;
+        private Button buttonCallApiForHeaders;
+        private Button buttonCallApiForJsonData;
+        private Label label2;
+        private Label label3;
+        private Label labelLog;
+        private Button testApiButton;
     }
 }
