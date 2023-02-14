@@ -53,7 +53,7 @@ internal class GetDataFromMyCalibration
         //  - filters only calibration data of product type "17SHX"
         //  - filters only calibration data from the year 2022 or older (order dispatch date)
         // https://mycalibration.github.io/
-        var filterParameters = "?OrderPositions=5";
+        var filterParameters = "?DateFilterType=greaterThan&Date=2022-06-01";
 
         var url = baseUrl + filterParameters;
 

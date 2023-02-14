@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using KellerSensorDataExchange;
 
 namespace WinFormsApp
 {
@@ -15,7 +16,6 @@ namespace WinFormsApp
 
         private async void buttonCallApiForHeaders_Click(object? sender, EventArgs e)
         {
-            var responseText = "";
             var permanentAccessToken = textBox1.Text;
             if (permanentAccessToken == null || permanentAccessToken.Length < 200)
             {
@@ -23,22 +23,21 @@ namespace WinFormsApp
             }
             else
             {
-                responseText = await _getter.GetHeaderDataAsync(permanentAccessToken);
+                var responseText = await _getter.GetHeaderDataAsync(permanentAccessToken);
                 richTextBox1.Text += $"{DateTime.Now:s} | API Call successfull. Data:\n {responseText}\n";
 
                 //You can also deserialize the meta information
                 try
                 {
-
-                    //TODO: FIX THIS
-                    //var headers = JsonConvert.DeserializeObject<List<IO.Swagger.Model.Header>>(responseText);
+                    //Does not work
+                    var headers2 = JsonConvert.DeserializeObject<List<IO.Swagger.Model.Header>>(responseText, KellerSensorDataExchange.Converter.Settings);
                     
                     var headers = JsonConvert.DeserializeObject<List<object>>(responseText);
 
                     if (headers != null && headers.Count > 0)
                     {
-                        var sampleData = headers.First();
-                        richTextBox1.Text += $"{DateTime.Now:s} | FIRST HEADER META INFO: \n{sampleData.ToString()}\n";
+                        var sampleHeaderJsonData = headers.First();
+                        richTextBox1.Text += $"{DateTime.Now:s} | FIRST HEADER META INFO: \n{sampleHeaderJsonData}\n";
                     }
                 }
                 catch (Exception exception)
@@ -51,7 +50,7 @@ namespace WinFormsApp
 
         private void buttonCallApiForJsonData_Click(object sender, EventArgs e)
         {
-             //MyCalibrationExampleConvert.FromJson(responseText);
+             //
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

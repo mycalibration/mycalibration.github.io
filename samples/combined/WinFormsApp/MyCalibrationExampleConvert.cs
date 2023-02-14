@@ -1,14 +1,10 @@
 ﻿using KellerSensorDataExchange;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using myCalibration.Converters;
 
 namespace WinFormsApp
 {
-    //TODO
+    // Uses nuget library 'myCalibration.Converters' to convert the data
     internal class MyCalibrationExampleConvert
     {
         public static void FromJson(string jsonText)
@@ -79,9 +75,17 @@ namespace WinFormsApp
                 {
                     Console.Write($" |- No calibration measure points stored.");
                 }
-            }
 
-            Console.ReadLine();
+                // It is also possible to revert this to the JSON content
+                string singleCalibrationDataAsJsonText = sampleData.ToJson();
+                
+                
+                // And, of course to convert to the obsolete Text version (TestRun.txt)
+                (string singleObsoleteTextVersion1, string singleObsoleteTextVersion2) = MyCalibrationJsonConvert.JsonTextToTxtText(singleCalibrationDataAsJsonText);
+
+                Console.WriteLine(singleObsoleteTextVersion1 + Environment.NewLine);
+                Console.WriteLine(singleObsoleteTextVersion2 + Environment.NewLine);
+            }
         }
     }
 }
