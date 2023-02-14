@@ -54,31 +54,29 @@ public partial class Form1 : Form
                     extractedHeaderInfos.Add(extractedHeaderInfo);
                 }
 
-                var allOrderNumbers = extractedHeaderInfos.GroupBy(_ => _.OrderNumber).ToList();
-                
                 treeView1.BeginUpdate();
-                foreach (var orderNumbers in allOrderNumbers)
+
+                // https://sharegpt.com/c/RfeXuP9
+                var orderNumberGroups = extractedHeaderInfos.GroupBy(info => info.OrderNumber);
+                foreach (var orderNumberGroup in orderNumberGroups)
                 {
-                    treeView1.Nodes.Add(orderNumbers.Key);
+                    var orderNumberNode = new TreeNode(orderNumberGroup.Key);
 
-
-
-                }
-
-                foreach (TreeNode parentNodes in treeView1.Nodes)
-                {
-                    var orderNumber = parentNodes.Text;
-                    List<IGrouping<string, ExtractedHeaderInfo>> positionNumbersOfOrderNumber = extractedHeaderInfos
-                        .Where(_ => _.OrderNumber == orderNumber)
-                        .GroupBy(_=>_.OrderPosition)
-                        .ToList();
-
-                    foreach (var positionNumber in positionNumbersOfOrderNumber)
+                    foreach (var orderPosition in orderNumberGroup.Select(info => info.OrderPosition).Distinct())
                     {
-                        parentNodes.Nodes.Add(positionNumber.Key);
-                    }
-                }
+                        var orderPositionNode = new TreeNode(orderPosition);
 
+                        foreach (var serialNumber in orderNumberGroup.Where(info => info.OrderPosition == orderPosition).Select(info => info.SerialNumber))
+                        {
+                            var serialNumberNode = new TreeNode(serialNumber);
+                            orderPositionNode.Nodes.Add(serialNumberNode);
+                        }
+
+                        orderNumberNode.Nodes.Add(orderPositionNode);
+                    }
+
+                    treeView1.Nodes.Add(orderNumberNode);
+                }
                 treeView1.EndUpdate();
             }
             catch (Exception exception)

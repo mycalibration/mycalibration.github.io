@@ -38,14 +38,16 @@
             this.labelLog = new System.Windows.Forms.Label();
             this.testApiButton = new System.Windows.Forms.Button();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 673);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 693);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1421, 302);
+            this.richTextBox1.Size = new System.Drawing.Size(1342, 388);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -64,15 +66,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(27, 53);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1215, 31);
+            this.textBox1.Size = new System.Drawing.Size(1045, 31);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonCallApiForHeaders
             // 
-            this.buttonCallApiForHeaders.Location = new System.Drawing.Point(27, 119);
+            this.buttonCallApiForHeaders.Location = new System.Drawing.Point(27, 163);
             this.buttonCallApiForHeaders.Name = "buttonCallApiForHeaders";
-            this.buttonCallApiForHeaders.Size = new System.Drawing.Size(302, 34);
+            this.buttonCallApiForHeaders.Size = new System.Drawing.Size(238, 34);
             this.buttonCallApiForHeaders.TabIndex = 3;
             this.buttonCallApiForHeaders.Text = "Call API and get metadata";
             this.buttonCallApiForHeaders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -81,11 +83,11 @@
             // 
             // buttonCallApiForJsonData
             // 
-            this.buttonCallApiForJsonData.Location = new System.Drawing.Point(27, 591);
+            this.buttonCallApiForJsonData.Location = new System.Drawing.Point(475, 163);
             this.buttonCallApiForJsonData.Name = "buttonCallApiForJsonData";
-            this.buttonCallApiForJsonData.Size = new System.Drawing.Size(302, 34);
+            this.buttonCallApiForJsonData.Size = new System.Drawing.Size(257, 34);
             this.buttonCallApiForJsonData.TabIndex = 4;
-            this.buttonCallApiForJsonData.Text = "Call API and get filtered JSON data";
+            this.buttonCallApiForJsonData.Text = "Call API and get chosen data";
             this.buttonCallApiForJsonData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCallApiForJsonData.UseVisualStyleBackColor = true;
             this.buttonCallApiForJsonData.Click += new System.EventHandler(this.buttonCallApiForJsonData_Click);
@@ -93,26 +95,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 91);
+            this.label2.Location = new System.Drawing.Point(27, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 25);
+            this.label2.Size = new System.Drawing.Size(407, 25);
             this.label2.TabIndex = 5;
-            this.label2.Text = "2)";
+            this.label2.Text = "2) Get the header info and choose a serial number";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 563);
+            this.label3.Location = new System.Drawing.Point(475, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 25);
+            this.label3.Size = new System.Drawing.Size(641, 25);
             this.label3.TabIndex = 6;
-            this.label3.Text = "3)";
+            this.label3.Text = "3) Download the JSON of the sensor with the chosen serial number and convert";
             // 
             // labelLog
             // 
             this.labelLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelLog.AutoSize = true;
-            this.labelLog.Location = new System.Drawing.Point(12, 645);
+            this.labelLog.Location = new System.Drawing.Point(12, 665);
             this.labelLog.Name = "labelLog";
             this.labelLog.Size = new System.Drawing.Size(42, 25);
             this.labelLog.TabIndex = 7;
@@ -121,7 +123,7 @@
             // testApiButton
             // 
             this.testApiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.testApiButton.Location = new System.Drawing.Point(1273, 53);
+            this.testApiButton.Location = new System.Drawing.Point(1109, 53);
             this.testApiButton.Name = "testApiButton";
             this.testApiButton.Size = new System.Drawing.Size(136, 34);
             this.testApiButton.TabIndex = 8;
@@ -131,16 +133,34 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(27, 180);
+            this.treeView1.Location = new System.Drawing.Point(27, 203);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(713, 370);
+            this.treeView1.Size = new System.Drawing.Size(400, 440);
             this.treeView1.TabIndex = 9;
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(478, 202);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(400, 440);
+            this.richTextBox2.TabIndex = 10;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(924, 203);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(400, 440);
+            this.richTextBox3.TabIndex = 11;
+            this.richTextBox3.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1421, 975);
+            this.ClientSize = new System.Drawing.Size(1342, 1081);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.testApiButton);
             this.Controls.Add(this.labelLog);
@@ -170,5 +190,7 @@
         private Label labelLog;
         private Button testApiButton;
         private TreeView treeView1;
+        private RichTextBox richTextBox2;
+        private RichTextBox richTextBox3;
     }
 }
