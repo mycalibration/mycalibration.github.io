@@ -72,6 +72,7 @@
             // 
             // buttonCallApiForHeaders
             // 
+            this.buttonCallApiForHeaders.Enabled = false;
             this.buttonCallApiForHeaders.Location = new System.Drawing.Point(27, 163);
             this.buttonCallApiForHeaders.Name = "buttonCallApiForHeaders";
             this.buttonCallApiForHeaders.Size = new System.Drawing.Size(238, 34);
@@ -83,6 +84,7 @@
             // 
             // buttonCallApiForJsonData
             // 
+            this.buttonCallApiForJsonData.Enabled = false;
             this.buttonCallApiForJsonData.Location = new System.Drawing.Point(475, 163);
             this.buttonCallApiForJsonData.Name = "buttonCallApiForJsonData";
             this.buttonCallApiForJsonData.Size = new System.Drawing.Size(257, 34);
@@ -123,6 +125,7 @@
             // testApiButton
             // 
             this.testApiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.testApiButton.Enabled = false;
             this.testApiButton.Location = new System.Drawing.Point(1109, 53);
             this.testApiButton.Name = "testApiButton";
             this.testApiButton.Size = new System.Drawing.Size(136, 34);
@@ -137,6 +140,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(400, 440);
             this.treeView1.TabIndex = 9;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // richTextBox2
             // 

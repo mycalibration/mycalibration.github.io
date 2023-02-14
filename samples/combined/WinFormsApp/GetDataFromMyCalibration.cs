@@ -44,16 +44,14 @@ internal class GetDataFromMyCalibration
     }
 
 
-    public async Task<string> GetDataWithFilter(string permanentAccessToken, List<string> filters)
+    public async Task<string> GetSingleJsonAsync(string permanentAccessToken, string orderNumber, string position, string serialNumber)
     {
         using var client = new HttpClient();
         var baseUrl = "https://mycalibrationapi.azurewebsites.net/v1/CalibrationData";
 
-        // Example Query which 
-        //  - filters only calibration data of product type "17SHX"
-        //  - filters only calibration data from the year 2022 or older (order dispatch date)
-        // https://mycalibration.github.io/
-        var filterParameters = "?DateFilterType=greaterThan&Date=2022-06-01";
+        var filterParameters = $"?OrderNumbers={orderNumber}&OrderPositions={position}&SerialNumberSearchText={serialNumber}";
+        // Side note: Theoretically, this might replies with multiple calibration data sets because it searches for the given serial number text.
+        // This means a serialNumber of "12" might target a sensor with serial number "12" but also "120" or "121" ..
 
         var url = baseUrl + filterParameters;
 

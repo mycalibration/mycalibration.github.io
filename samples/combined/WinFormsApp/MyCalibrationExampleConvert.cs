@@ -7,7 +7,7 @@ namespace WinFormsApp
     // Uses nuget library 'myCalibration.Converters' to convert the data
     internal class MyCalibrationExampleConvert
     {
-        public static void FromJson(string jsonText)
+        public static (string,string,string) FromJson(string jsonText)
         {
             List<KellerSensorData> calibrationData;
             try
@@ -18,17 +18,22 @@ namespace WinFormsApp
             {
                 var message = $"Could not parse data with content {Environment.NewLine}{jsonText}";
                 Console.WriteLine(message + " - " + e);
-                return;
+                return ("","","");
             }
 
             if (calibrationData == null)
             {
                 var message = $"Could not parse data with content {Environment.NewLine}{jsonText}";
                 Console.WriteLine(message);
-                return;
+                return ("", "", "");
             }
 
             Console.WriteLine($"Loaded calibration data from {calibrationData.Count} sensors.");
+
+            var singleCalibrationDataAsJsonText = "";
+            var singleObsoleteTextVersion1 = "";
+            var singleObsoleteTextVersion2 = "";
+
             if (calibrationData.Count > 0)
             {
                 var sampleData = calibrationData.First();
@@ -77,15 +82,16 @@ namespace WinFormsApp
                 }
 
                 // It is also possible to revert this to the JSON content
-                string singleCalibrationDataAsJsonText = sampleData.ToJson();
-                
+                singleCalibrationDataAsJsonText = sampleData.ToJson();
                 
                 // And, of course to convert to the obsolete Text version (TestRun.txt)
-                (string singleObsoleteTextVersion1, string singleObsoleteTextVersion2) = MyCalibrationJsonConvert.JsonTextToTxtText(singleCalibrationDataAsJsonText);
+                (singleObsoleteTextVersion1, singleObsoleteTextVersion2) = MyCalibrationJsonConvert.JsonTextToTxtText(singleCalibrationDataAsJsonText);
 
                 Console.WriteLine(singleObsoleteTextVersion1 + Environment.NewLine);
                 Console.WriteLine(singleObsoleteTextVersion2 + Environment.NewLine);
             }
+
+            return (singleCalibrationDataAsJsonText, singleObsoleteTextVersion1, singleObsoleteTextVersion2);
         }
     }
 }

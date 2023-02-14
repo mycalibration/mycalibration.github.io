@@ -418,7 +418,8 @@ namespace KellerSensorDataExchange
                 PressureTypeConverter.Singleton,
             },
             DateFormatString = "yyyy-MM-dd",
-            NullValueHandling = NullValueHandling.Include
+            NullValueHandling = NullValueHandling.Include,
+            Formatting = Formatting.Indented //Special for this SW
         };
     }
 
