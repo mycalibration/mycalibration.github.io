@@ -40,6 +40,7 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -47,7 +48,7 @@
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.richTextBox1.Location = new System.Drawing.Point(0, 693);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1342, 388);
+            this.richTextBox1.Size = new System.Drawing.Size(1778, 388);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -66,7 +67,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(27, 53);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1045, 31);
+            this.textBox1.Size = new System.Drawing.Size(1579, 31);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -126,7 +127,7 @@
             // 
             this.testApiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.testApiButton.Enabled = false;
-            this.testApiButton.Location = new System.Drawing.Point(1109, 53);
+            this.testApiButton.Location = new System.Drawing.Point(1612, 53);
             this.testApiButton.Name = "testApiButton";
             this.testApiButton.Size = new System.Drawing.Size(136, 34);
             this.testApiButton.TabIndex = 8;
@@ -158,11 +159,20 @@
             this.richTextBox3.TabIndex = 11;
             this.richTextBox3.Text = "";
             // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(1358, 203);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(400, 440);
+            this.richTextBox4.TabIndex = 12;
+            this.richTextBox4.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 1081);
+            this.ClientSize = new System.Drawing.Size(1778, 1081);
+            this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.treeView1);
@@ -196,5 +206,6 @@
         private TreeView treeView1;
         private RichTextBox richTextBox2;
         private RichTextBox richTextBox3;
+        private RichTextBox richTextBox4;
     }
 }

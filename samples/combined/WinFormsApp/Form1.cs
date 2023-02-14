@@ -100,6 +100,7 @@ public partial class Form1 : Form
 
             richTextBox2.Text = dataAsFormattedJson;
             richTextBox3.Text = obsoleteTextVersion1;
+            richTextBox4.Text = obsoleteTextVersion2;
 
         }
         catch (Exception exception)
