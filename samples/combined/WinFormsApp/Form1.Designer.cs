@@ -37,14 +37,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labelLog = new System.Windows.Forms.Label();
             this.testApiButton = new System.Windows.Forms.Button();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 716);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 673);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1421, 259);
+            this.richTextBox1.Size = new System.Drawing.Size(1421, 302);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -80,7 +81,7 @@
             // 
             // buttonCallApiForJsonData
             // 
-            this.buttonCallApiForJsonData.Location = new System.Drawing.Point(27, 264);
+            this.buttonCallApiForJsonData.Location = new System.Drawing.Point(27, 591);
             this.buttonCallApiForJsonData.Name = "buttonCallApiForJsonData";
             this.buttonCallApiForJsonData.Size = new System.Drawing.Size(302, 34);
             this.buttonCallApiForJsonData.TabIndex = 4;
@@ -101,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 236);
+            this.label3.Location = new System.Drawing.Point(27, 563);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 25);
             this.label3.TabIndex = 6;
@@ -111,7 +112,7 @@
             // 
             this.labelLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelLog.AutoSize = true;
-            this.labelLog.Location = new System.Drawing.Point(12, 688);
+            this.labelLog.Location = new System.Drawing.Point(12, 645);
             this.labelLog.Name = "labelLog";
             this.labelLog.Size = new System.Drawing.Size(42, 25);
             this.labelLog.TabIndex = 7;
@@ -128,11 +129,19 @@
             this.testApiButton.UseVisualStyleBackColor = true;
             this.testApiButton.Click += new System.EventHandler(this.testApiButton_Click);
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(27, 180);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(713, 370);
+            this.treeView1.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 975);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.testApiButton);
             this.Controls.Add(this.labelLog);
             this.Controls.Add(this.label3);
@@ -160,5 +169,6 @@
         private Label label3;
         private Label labelLog;
         private Button testApiButton;
+        private TreeView treeView1;
     }
 }
