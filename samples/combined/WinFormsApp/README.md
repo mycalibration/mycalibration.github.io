@@ -1,6 +1,6 @@
 ## Windows Forms Sample Application
 
-![WindowsFormsSampleMyCalibration](https://github.com/mycalibration/mycalibration.github.io/blob/06a9a9543257466b6857ce8797532e647051290b/docs/media/WindowsFormsSampleMyCalibration.png?raw=true)
+![WindowsFormsSampleMyCalibration](https://github.com/mycalibration/mycalibration.github.io/raw/main/docs/media/WindowsFormsSampleMyCalibration.png)
 
 ### Description
 - Use the Permanent Access Token
