@@ -4,7 +4,7 @@
 
 ### Description
 - Use the Permanent Access Token
-- Load all available meatinfo (header-data) and show them in a TreeView  (OrderNumber -> OrderPosition -> SerialNumber)
+- Load all available metainfo (header-data) and show them in a TreeView  (OrderNumber -> OrderPosition -> SerialNumber)
 - Choose one calibration data set by selecting a serial number
 - Download the whole calibration data JSON and show it in a TextBox
 - Also try to convert this JSON to the old obsolete text format by using the myCalibration converter DLL
