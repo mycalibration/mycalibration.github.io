@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.IO.Compression;
 using WinFormsApp.Dto;
 
 namespace WinFormsApp;
@@ -182,5 +183,34 @@ public partial class Form1 : Form
         //Allow Button 3)
         buttonCallApiForJsonData.Enabled = true;
 
+    }
+
+    private async void button1_Click(object sender, EventArgs e)
+    {
+        const string basePath = @"C:/temp/";
+
+        var customerOrderNumber = "12345678-0";
+        var permanentAccessToken = textBox1.Text;
+
+        var fileName = $"download_{customerOrderNumber}.zip";
+        var filePath = Path.Combine(basePath, fileName);
+
+        try
+        {
+            await _getter.GetZippedFilesWithCustomerOrderNumberAsync(permanentAccessToken, customerOrderNumber, filePath);
+
+            int fileCountInZipFile;
+            using (ZipArchive archive = ZipFile.OpenRead(filePath))
+            {
+                fileCountInZipFile = archive.Entries.Count;
+            }
+
+            richTextBox1.Text += $"{DateTime.Now:s} | API Call successfull. Data:\n {fileCountInZipFile} files in {Path.GetFullPath(filePath)}\n";
+
+        }
+        catch (Exception exception)
+        {
+            richTextBox1.Text += $"{DateTime.Now:s} | Loading data from API not possible : \n {exception}\n";
+        }
     }
 }

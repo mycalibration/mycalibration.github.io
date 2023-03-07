@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.IO;
+using System.Net;
 
 namespace WinFormsApp;
 
@@ -67,6 +69,30 @@ internal class GetDataFromMyCalibration
         {
             Debug.WriteLine($@"Exception Caught! Message :{e.Message}");
             return $@"Exception Caught! Message :{e.Message}";
+        }
+    }
+
+    public async Task<bool> GetZippedFilesWithCustomerOrderNumberAsync(string permanentAccessToken, string customerOrderNumber, string filePath)
+    {
+        var baseUrl = "https://mycalibrationapi.azurewebsites.net/v1/CalibrationData";
+        var filterParameters = $"/Export?fileType=3&CustomerOrderNumberSearchText={customerOrderNumber}";
+        // Side note: This is a search text. Example: Searching for "order-123" gives back all orders with numbers that looks like this "order-123-01" and "order-123-02" and "my-order-123"
+        var url = baseUrl + filterParameters;
+
+        using var client = new HttpClient();
+        client.DefaultRequestHeaders.Add("userOid", permanentAccessToken);
+
+        try
+        {
+            await using var stream = await client.GetStreamAsync(url);
+            await using var file = File.OpenWrite(filePath);
+            await stream.CopyToAsync(file);
+            return true; //success
+        }
+        catch (HttpRequestException e)
+        {
+            Debug.WriteLine($@"Exception Caught! Message :{e.Message}");
+            throw;
         }
     }
 }
