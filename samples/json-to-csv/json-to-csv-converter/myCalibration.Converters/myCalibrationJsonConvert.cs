@@ -52,13 +52,23 @@ namespace myCalibration.Converters
         }
 
 
-        private static (string, string) JsonTextToCsvText(KellerSensorData kellerSensorData)
+        /// <summary>
+        /// Converts a myCalibration-KellerSensorData-object to the measurement-CSV and the coefficients-CSV
+        /// </summary>
+        /// <param name="kellerSensorData"></param>
+        /// <returns>1st string = measurement-CSV-content, 2nd string = coefficients-CSV-content</returns>
+        public static (string, string) KellerSensorDataToCsvText(KellerSensorData kellerSensorData)
         {
             var (convertedCoefficientCsvText, convertedMeasurementsCsvText) = Mapping.JsonTextToCsvText.Convert(kellerSensorData);
             return (convertedCoefficientCsvText, convertedMeasurementsCsvText);
         }
 
-        private static (string, string) JsonTextToTxtText(KellerSensorData kellerSensorData)
+        /// <summary>
+        /// Converts a myCalibration-KellerSensorData-object to the measurement-TXT and the coefficients-TXT
+        /// </summary>
+        /// <param name="kellerSensorData"></param>
+        /// <returns>1st string = measurement-TXT-content, 2nd string = coefficients-TXT-content</returns>
+        public static (string, string) KellerSensorDataToTxtText(KellerSensorData kellerSensorData)
         {
             var (convertedCoefficientTxtText, convertedMeasurementsTxtText) = Mapping.JsonTextToTxtText.Convert(kellerSensorData);
             return (convertedCoefficientTxtText, convertedMeasurementsTxtText);
