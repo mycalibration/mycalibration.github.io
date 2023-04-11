@@ -113,6 +113,14 @@ You can use this to quickly find out how many files you request with a given que
 Get a list of all identifier strings of the calibration data set defined by the optional search parameters. See [filter/search parameters](#filter-parameters).
 These identifier strings (***IncludedIds***) can then used as input as filter parameter for a query in ***GET /v1/CalibrationData***
 
+### GET /v1/CalibrationData/New
+
+Get a list of all data that is stored in myCalibration after given datetime ***since***. Data is stored in myCalibration mostly, 1 day before the start of the delivery from Switzerland. This correlates with the dispatch date but differs often.  
+
+| Name | Located in | Description | Required | Schema |
+| ---- | ---------- | ----------- | -------- | ---- |
+| since | query | UTC DateTime - Responses contain all data younger than this moment  | Yes | integer |
+
 ### PUT /v1/CalibrationData/New
 
 WARNING: Only use when you know what you do. Better ask engineering@keller-druck.com
@@ -307,11 +315,12 @@ Although '*PA*' is shown in the UI and listed in the JSON, the API parameter str
 
 ### Example queries
 
-TODO
+Please see https://github.com/mycalibration/mycalibration.github.io
 
 ### Generate client SW using the OpenAPI/swagger schema
 
-[https://editor.swagger.io/](https://editor.swagger.io/)
+Use [https://editor.swagger.io/](https://editor.swagger.io/)
+The Swagger/Openapi import URL is here: https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json
 
 ---
 
@@ -659,7 +668,10 @@ Unfortunately, it is also not that easy to find new data. There are some ways:
    - Just load all metadata (https://mycalibrationapi.azurewebsites.net/v1/Headers) and compare it with the data you already downloaded and stored.
    - Be aware that the Dispatch-Date is not a good way to filter for new data. It is the supposed date for the delivery. In reality, it might be that an order was produced and sent earlier than another order with a even earlier dispatch date.
    - Another way is to use the PUT https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New. When using this endpoint, it response with all new data. Be aware that when requesting this data then the data is marked and manipulates internally. Hence the PUT. A second request shortly after the first will response without data.  
-   - ***TODO***: There will be a GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New and GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Headers/New with the required DateTime parameter. You will get back the list of data that was newly ingested from the given moment (UTC).  
+   - Another way is to store the ids (identifier strings), get the list of all identifier strings and compare & search for new ones. If there are new ones than just download them with GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData?IncludedIds=12345&IncludedIds=12346 as an example.
+   - There is also GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New and with the required DateTime parameter. You will get back the list of data that was newly ingested from the given moment (UTC).
+   - To combine the two ideas above, there is also /v1/CalibrationData/List/New that responds with a list of identifier strings that are newer than a certain given DateTime (UTC). Use this list to synchronize with your stored data using the identifier strings as a lookup key. An example call looks like this: *https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/List/New?since=2023-04-01T12:15:00.000Z* 
+   
 
  - ***What are best practices when using the API? What endpoints should I use?***
 Generally, there should be two steps:  
@@ -693,7 +705,6 @@ The converter was build as a proof-of-concept in order to show that nearly all i
  Yes. Customer data is only accessible after an individual login and cannot be seen by others. Thanks to best practices, audits and Microsoft's 'Azure Active Directory B2C' authentication technology, security is guaranteed.
 
   The «myCalibration» platform uses the access, storage and authentication of users and data in/from a MICROSOFT (Azure) data center. This data center is in the EU and subject to EU regulations ( EU Data Protection Regulation [DSGVO] ). <https://www.microsoft.com/de-de/TrustCenter/Privacy/gdpr/default.aspx>
-
   Be aware that there is no relevant 'personal data' stored.
  What standards does Microsoft guarantee?
  <https://azure.microsoft.com/en-us/overview/trusted-cloud/> (overview)
