@@ -9,7 +9,7 @@ Table of Contents
    [4) The JSON Schema](#4-the-json-schema)  
    [5) Sample Software](#5-sample-software)  
    [6) FAQ](#6-faq)  
-   [7) Roadmap](#7-roadmap)
+   [7) Roadmap](#7-roadmap)  
    [8) Release Notes](#8-release-notes)
 
 ---
@@ -661,7 +661,7 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  We used [https://app.quicktype.io/](https://app.quicktype.io/) to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
  As an example, the JSON data is parsed and converted to the old txt/CSV files in [the converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters).
 
- - ***How do I find new data? Is there a notification system?***
+ - ***How do I find new data? Is there a notification system?***  
 No, there is no notification system. You have to periodically ask the API for new data?  
 Unfortunately, it is also not that easy to find new data. There are some ways:
    - Periodically, check the number of calibration data. If the number is higher then try to find new data. (Use https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Count)
@@ -673,7 +673,7 @@ Unfortunately, it is also not that easy to find new data. There are some ways:
    - To combine the two ideas above, there is also /v1/CalibrationData/List/New that responds with a list of identifier strings that are newer than a certain given DateTime (UTC). Use this list to synchronize with your stored data using the identifier strings as a lookup key. An example call looks like this: *https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/List/New?since=2023-04-01T12:15:00.000Z* 
    
 
- - ***What are best practices when using the API? What endpoints should I use?***
+ - ***What are best practices when using the API? What endpoints should I use?***  
 Generally, there should be two steps:  
     1. Periodically load new data and store it into your DB/file system.  
     2. Extract the coefficients (and more information) from the JSON and store it or use it to program your firmware with the sensor.  
@@ -685,7 +685,7 @@ Generally, there should be two steps:
    - It is not recommended to use the GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Export query. Prefere to download the content directly with GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/  
    - The myCalibration API might not work 100%. Consider appropriate reactions in case an API query is not responding and try the query later. 
   
- - ***What makes files unique? Is the serial number enough for an identification?***
+ - ***What makes files unique? Is the serial number enough for an identification?***  
 Generally, product-number and serial-number should good enough to define a unique sensor data set.
 Nevertheless, a JSON file looks like this:
 {Product Number}_ {Serial Number}_ {File Creation Date}_{MathMod Number}.json
@@ -694,10 +694,10 @@ In rare cases, a sensor is send back to us for re-calibration. This is why the f
 Some customer buy sensors from KELLER with multiple MathMod (most probably because they have different use cases with different pressure/temperature ranges) and for this, the MathMod number is included, too. In this case, two files are created for each MathMod.  
 
 
- - ***I tried the converter. It does not give me the 1:1 data as the txt file I am used to. Why?***
+ - ***I tried the converter. It does not give me the 1:1 data as the txt file I am used to. Why?***  
 The converter was build as a proof-of-concept in order to show that nearly all information in the txt/csv files are also stored in the JSON file. It is not meant as a 1:1 conversion and should not be used in production.
 
-- ***But I use these TestRun.txt and ....csv files for years. Why should I change to the JSON file?***
+- ***But I use these TestRun.txt and ....csv files for years. Why should I change to the JSON file?***  
  Changing to the JSON files is not that difficult for a developer given the many examples. [The converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters) shows how to access the JSON data and extract the needed (coefficients) data.
  The [online converter](https://mycalibration.github.io/converter) also demonstrates the possibility to extract the needed data from the JSON files.
 
@@ -711,7 +711,7 @@ The converter was build as a proof-of-concept in order to show that nearly all i
  <https://azure.microsoft.com/en-us/blog/microsoft-azure-leads-the-industry-in-iso-certifications/> (overview)
  List of standards: <https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings> eg ISO 9001 , ISO 20000-1: 2011, ISO 2230, ISO 27001, ISO 27017, ISO 27018, BIR 2012 (Netherlands), UK G-Cloud, Argentina PDPA …
 
-- ***Where do I get a permanent access token from to access the API?***
+- ***Where do I get a permanent access token from to access the API?***  
  The temporary and permanent access token can be seen in the web app under "Profile Settings" which can be found with the button of the company name.  
  There is always the temporary access token that can be used for the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html).  
  If the permanent access token is not visible for you then you might need to be given the needed authorization from engineering@keller-druck.com. Ask for an permanent access token.
@@ -725,5 +725,5 @@ The converter was build as a proof-of-concept in order to show that nearly all i
 
 ---
 
-## 8) Releases Notes
+## 8) Release Notes
 See [Release Notes](https://mycalibration.github.io/release-notes)  
