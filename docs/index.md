@@ -315,12 +315,12 @@ Although '*PA*' is shown in the UI and listed in the JSON, the API parameter str
 
 ### Example queries
 
-Please see https://github.com/mycalibration/mycalibration.github.io
+Please see <https://github.com/mycalibration/mycalibration.github.io>
 
 ### Generate client SW using the OpenAPI/swagger schema
 
 Use [https://editor.swagger.io/](https://editor.swagger.io/)
-The Swagger/Openapi import URL is here: https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json
+The Swagger/Openapi import URL is here: <https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json>
 
 ---
 
@@ -508,7 +508,7 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
     <td class="tg-0lax">"123456700012"</td>
   </tr>
   <tr>
-    <td class="tg-0lax" rowspan="27">measurements[] *</td>
+<td class="tg-0lax" rowspan="27">measurements[]*</td>
     <td class="tg-0lax"> </td>
     <td class="tg-0lax">Array&nbsp;of individual measurements. Item order corresponds to order in measurement&nbsp;sequence.</td>
     <td class="tg-0lax"> </td>
@@ -628,9 +628,9 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
   - **/api**
     - [**/csharp-dotnet/simple**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/simple) *- Simple C# example to show how to get data from the API and parse it.*
     - [**/csharp-dotnet/swagger-codegen**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/csharp-dotnet/swagger-codegen)  *- Auto-Generated code based of the OpenAPI file. Generated on /editor.swagger.io*  
-    - [**/python/simple**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/python/simple/get-data.py)  *- Simple Pyton example to show how to get data from the API and parse it.* 
+    - [**/python/simple**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/python/simple/get-data.py)  *- Simple Python example to show how to get data from the API and parse it.*
     - [**/python/swagger-codegen**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/api/python/swagger-codegen)    *- Auto-Generated code based of the OpenAPI file. Generated on editor.swagger.io*  
-    - [**/labview/simple**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/labview/simple/)  *- LabView example to show the API access via permanent access token and how to extract data out of the response.* 
+    - [**/labview/simple**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/api/labview/simple/)  *- LabView example to show the API access via permanent access token and how to extract data out of the response.*
   - [**/data-model/KellerSensorData.cs**](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs)  *- C# class with the data schema structure implemented.*  
   - **/json-to-csv**
     - [**/json-to-csv-converter**](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/)  *- Converter source to demonstrate the conversion from the JSON data to the old obsolete text/CSV file data.*
@@ -661,43 +661,41 @@ Github repo: [https://github.com/mycalibration/mycalibration.github.io/](https:/
  We used [https://app.quicktype.io/](https://app.quicktype.io/) to generate [the C# data classes](https://github.com/mycalibration/mycalibration.github.io/blob/main/samples/data-model/KellerSensorData.cs) that makes it easy to deserialize the JSON.
  As an example, the JSON data is parsed and converted to the old txt/CSV files in [the converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters).
 
- - ***How do I find new data? Is there a notification system?***  
-No, there is no notification system. You have to periodically ask the API for new data?  
+- ***How do I find new data? Is there a notification system?***  
+No, there is no notification system. You have to periodically ask the API for new data.  
 Unfortunately, it is also not that easy to find new data. There are some ways:
-   - Periodically, check the number of calibration data. If the number is higher then try to find new data. (Use https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Count)
-   - Just load all metadata (https://mycalibrationapi.azurewebsites.net/v1/Headers) and compare it with the data you already downloaded and stored.
-   - Be aware that the Dispatch-Date is not a good way to filter for new data. It is the supposed date for the delivery. In reality, it might be that an order was produced and sent earlier than another order with a even earlier dispatch date.
-   - Another way is to use the PUT https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New. When using this endpoint, it response with all new data. Be aware that when requesting this data then the data is marked and manipulates internally. Hence the PUT. A second request shortly after the first will response without data.  
-   - Another way is to store the ids (identifier strings), get the list of all identifier strings and compare & search for new ones. If there are new ones than just download them with GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData?IncludedIds=12345&IncludedIds=12346 as an example.
-   - There is also GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New and with the required DateTime parameter. You will get back the list of data that was newly ingested from the given moment (UTC).
-   - To combine the two ideas above, there is also /v1/CalibrationData/List/New that responds with a list of identifier strings that are newer than a certain given DateTime (UTC). Use this list to synchronize with your stored data using the identifier strings as a lookup key. An example call looks like this: *https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/List/New?since=2023-04-01T12:15:00.000Z* 
-   
+  - Periodically, check the number of calibration data. If the number is higher then try to find new data. (Use ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Count```)
+  - Just load all metadata (```GET https://mycalibrationapi.azurewebsites.net/v1/Headers```) and compare it with the data you already downloaded and stored (using the *ProductNumber* and the *SerialNumber*).
+  - Be aware that the Dispatch-Date is not a good way to filter for new data. It is the supposed date for the delivery. In reality, it might be that an order was produced and sent earlier than another order with a even earlier dispatch date.
+  - Another way is to use the ```PUT <https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New```. When using this endpoint, it response with all new data. Be aware that when requesting this data then the data is marked and manipulates internally. Hence the ```PUT```. A second request shortly after the first will response without data.  
+  - Another way is to store the ids (identifier strings), get the list of all identifier strings and compare & search for new ones. If there are new ones than just download them with ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData?IncludedIds=12345&IncludedIds=12346``` as an example.
+  - There is also ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New``` and with the required DateTime parameter. You will get back the list of data that was newly ingested from the given moment (UTC).
+  - To combine the two ideas above, there is also ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/List/New``` that responds with a list of identifier strings that are newer than a certain given DateTime (UTC). Use this list to synchronize with your stored data using the identifier strings as a lookup key. An example call looks like this: ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/List/New?since=2023-04-01T12:15:00.000Z```
 
- - ***What are best practices when using the API? What endpoints should I use?***  
+- ***What are best practices when using the API? What endpoints should I use?***  
 Generally, there should be two steps:  
     1. Periodically load new data and store it into your DB/file system.  
     2. Extract the coefficients (and more information) from the JSON and store it or use it to program your firmware with the sensor.  
-   - Use the count request to check if you have the same amount of data stored GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Count Otherwise, download the data.
-   - Alternatively, you can download all the meta information from GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Header. These are the fields you see in the web app columns.
-   - When downloading data, you can filter for all the meta information. This is how the web app works. Enable the 'Developer Mode' to see the used filter parameter and the resulting API call. 
-   - Downloading data is best made with the GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/ call. It responses with a list of all filtered JSON files.
-   - If you have a list of serial numbers you can use the serial number as a filter parameter and download each JSON content individually
-   - It is not recommended to use the GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Export query. Prefere to download the content directly with GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/  
-   - The myCalibration API might not work 100%. Consider appropriate reactions in case an API query is not responding and try the query later. 
+  - Use the count request to check if you have the same amount of data stored ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Count``` Otherwise, download the data.
+  - Alternatively, you can download all the meta information from ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Header```. These are the fields you see in the web app columns.
+  - When downloading data, you can filter for all the meta information. This is how the web app works. Enable the 'Developer Mode' to see the used filter parameter and the resulting API call.
+  - Downloading data is best made with the ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData``` call. It responses with a list of all filtered JSON files.
+  - If you have a list of serial numbers you can use the serial number as a filter parameter and download each JSON content individually
+  - It is not recommended to use the ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Export``` query. Prefer to download the content directly with ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData```  
+  - The myCalibration API might not work 100%. Consider appropriate reactions in case an API query is not responding and try the query later.
   
- - ***What makes files unique? Is the serial number enough for an identification?***  
+- ***What makes files unique? Is the serial number enough for an identification?***  
 Generally, product-number and serial-number should good enough to define a unique sensor data set.
 Nevertheless, a JSON file looks like this:
-{Product Number}_ {Serial Number}_ {File Creation Date}_{MathMod Number}.json
-Eg.   100715.0244_X12345_2023-04-06_0123.json  
-In rare cases, a sensor is send back to us for re-calibration. This is why the file creation date is included in the file name. 
+```{Product Number}_{Serial Number}_{File Creation Date}_{MathMod Number}.json```
+Eg.   **100715.0244_X12345_2023-04-06_0123.json**  
+In rare cases, a sensor is send back to us for re-calibration. This is why the file creation date is included in the file name.
 Some customer buy sensors from KELLER with multiple MathMod (most probably because they have different use cases with different pressure/temperature ranges) and for this, the MathMod number is included, too. In this case, two files are created for each MathMod.  
 
+- ***I tried the converter. It does not give me the 1:1 data as the TXT file I am used to. Why?***  
+The converter was build as a proof-of-concept in order to show that nearly all information in the TXT/CSV files are also stored in the JSON file. It is not meant as a 1:1 conversion and should not be used in production.
 
- - ***I tried the converter. It does not give me the 1:1 data as the txt file I am used to. Why?***  
-The converter was build as a proof-of-concept in order to show that nearly all information in the txt/csv files are also stored in the JSON file. It is not meant as a 1:1 conversion and should not be used in production.
-
-- ***But I use these TestRun.txt and ....csv files for years. Why should I change to the JSON file?***  
+- ***But I use these TestRun.txt and ....CSV files for years. Why should I change to the JSON file?***  
  Changing to the JSON files is not that difficult for a developer given the many examples. [The converter example](https://github.com/mycalibration/mycalibration.github.io/tree/main/samples/json-to-csv/json-to-csv-converter/myCalibration.Converters) shows how to access the JSON data and extract the needed (coefficients) data.
  The [online converter](https://mycalibration.github.io/converter) also demonstrates the possibility to extract the needed data from the JSON files.
 
@@ -719,6 +717,7 @@ The converter was build as a proof-of-concept in order to show that nearly all i
 ---
 
 ## 7) Roadmap
+
 - Update Documentation / Schema  
 - Update release notes and planned maintenance windows
 - Description of new "Pressure Line Dependency"remark  
@@ -726,4 +725,5 @@ The converter was build as a proof-of-concept in order to show that nearly all i
 ---
 
 ## 8) Release Notes
+
 See [Release Notes](https://mycalibration.github.io/release-notes)  
