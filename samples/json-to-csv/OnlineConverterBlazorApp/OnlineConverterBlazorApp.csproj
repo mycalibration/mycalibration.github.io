@@ -7,26 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Converter\myCalibration.Converters.dll" />
-    <Content Include="Converter\myCalibration.Converters.pdb" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="KellerAg.Shared.myCalibration.Converters" Version="1.30.2" />
+    <PackageReference Include="KellerAg.Shared.myCalibration.Converters" Version="1.30.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.8" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Radzen.Blazor" Version="3.20.11" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Converter\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Converter\myCalibration.Converters.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>

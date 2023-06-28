@@ -3,14 +3,21 @@
 @using Newtonsoft.Json
 @implements IDisposable
 
-<div class="col-6" style="max-width: 50em;">
-    <RadzenCard>
-        <label>Add myCalibration JSON content and press the convert button</label>
-        <textarea class="form-control" rows="20" @bind="InputContentText"></textarea>
-        <RadzenButton Style="background-color:#a3d8e7;margin-top: 10px;width:200px" Click="@(_ => Format())" Text="FORMAT JSON"></RadzenButton>
-    </RadzenCard>
+<div class="btn-group" role="group">
+    <div class="col-6" style="max-width: 50em;">
+        <RadzenCard>
+            <label>Add myCalibration JSON content and press the convert button</label>
+            <textarea class="form-control" rows="20" @bind="InputContentText"></textarea>
+            <RadzenButton Style="background-color:#a3d8e7;margin-top: 10px;width:200px" Click="@(_ => Format())" Text="FORMAT JSON"></RadzenButton>
+        </RadzenCard>
+    </div>
+    <div class="col-6" style="color: #11111b; font-size: 12px;">
+        <RadzenCard>
+            <label>Reminder:<br>This converter was build as a proof-of-concept in order to show that nearly all information in the TXT/CSV files are also stored in the JSON file. It is not meant as a 1:1 conversion and should not be used in production.<br> https://mycalibration.github.io/</label>
+        </RadzenCard>
+    </div>
 </div>
-
+<br/>
 <div class="btn-group" role="group">
     <RadzenButton Style="background-color:#a3d8e7;margin-top: 10px; margin-bottom: 10px" Click="@(_ => Convert())" Text="CONVERT"></RadzenButton>
     <div class="btn-group" role="group">
@@ -108,7 +115,7 @@
         {
             _separator = ';';
         }
-        
+
 
     }
 
