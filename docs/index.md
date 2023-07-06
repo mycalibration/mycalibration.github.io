@@ -322,6 +322,47 @@ Please see <https://github.com/mycalibration/mycalibration.github.io>
 Use [https://editor.swagger.io/](https://editor.swagger.io/)
 The Swagger/Openapi import URL is here: <https://mycalibrationapi.azurewebsites.net/swagger/v1/swagger.json>
 
+### Accessing the API with the Permanent Access Token
+
+There are two types of tokens. The Permanent Access Token and the Temporary Access Token.  
+
+With the Temporary Access Token it is possible to access the data via API using the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html). This is working for a couple of hours after login.  
+
+The Permanent Access Token is used to access the API programmatically without manual login.
+
+#### Temporary Access Token
+
+Get the Temporary Access Token form the Profile Settings:  
+![Profile Settings](./media/temporary-access-token.png)  
+
+In the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html) click on the Authorize button and enter the Temporary Access Token:
+![Profile Settings](./media/temporary-access-token-in-swagger.png)
+
+#### Permanent Access Token
+
+As of now, you have to request the the Permanent Access Token directly from KELLER's myCalibration Support Team : <engineering@keller-druck.com>  
+
+The provided access token must be the value with the key 'userOid' in the header of every request. This way a bearer token and the OAuth 2 flow is NOT needed anymore.
+![Using the Permanent Access Token](./media/permanent-access-token-postman.png)
+
+Use tools like Postman, Insomnia or curl to test the API.  
+There are many programming examples on [Github](https://github.com/mycalibration/mycalibration.github.io/).
+Here an example in C#:  
+  ```csharp 
+  var url         = "https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Headers";
+  var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+
+  // Add the permanent access token to the header with the userOid key
+  httpRequest.Headers["userOid"] = "eyJhbGciOiJIUzI1NiIsInR....";
+
+  string resultJsonText;
+  HttpWebResponse httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+  using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+  {
+    resultJsonText = streamReader.ReadToEnd();
+  }
+  ```
+
 ---
 
 ## 4) The JSON Schema
@@ -713,6 +754,9 @@ The converter was build as a proof-of-concept in order to show that nearly all i
  The temporary and permanent access token can be seen in the web app under "Profile Settings" which can be found with the button of the company name.  
  There is always the temporary access token that can be used for the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html).  
  If the permanent access token is not visible for you then you might need to be given the needed authorization from engineering@keller-druck.com. Ask for an permanent access token.
+
+ - ***How do I USE the permanent access token access the API?***  
+ See [Accessing the API with the Permanent Access Token](#accessing-the-api-with-the-permanent-access-token)
 
 ---
 
