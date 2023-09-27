@@ -31,7 +31,7 @@ public static class JsonTextToTxtText
 
         if (kellerSensorData.CompensationMethods?.MathematicalModels != null)
         {
-            var mathMod = kellerSensorData.CompensationMethods.MathematicalModels.First().Value; //todo: For all MM, not just the first
+            var mathMod = kellerSensorData.CompensationMethods.MathematicalModels.First().Value; //For now, we support only one MathModel per JSON
 
             DisplayCoefficients("bridgeResistance");
             DisplayCoefficients("pressure");
@@ -100,8 +100,11 @@ public static class JsonTextToTxtText
             {
                 for (var t = 0; t < allPossibleTemperatureValuesOrdered.Length; t++)
                 {
+                    // Here we use First() because we measure the same pressure/temperature point multiple times and show it in the JSON.
+                    // Normally, we exclude the extra measurements (hysteresis measurements) in the JSON but in rare case they are here.
+                    // We consider the first measurement as the reference measurement point
                     measurementsOrderedByPressureAndTemperature[p, t] = testRunMeasurements
-                        .Single(_ => _.EnvironmentTarget["pressure"].Magnitude == allPossiblePressureValuesOrdered[p] &&
+                        .First(_ => _.EnvironmentTarget["pressure"].Magnitude == allPossiblePressureValuesOrdered[p] &&
                                      _.EnvironmentTarget["temperature"].Magnitude == allPossibleTemperatureValuesOrdered[t]);
                 }
             }
@@ -205,7 +208,7 @@ public static class JsonTextToTxtText
 
 
         var pressureRange = $"{kellerSensorData.Header.CompensatedPressureRange.Min} .. {kellerSensorData.Header.CompensatedPressureRange.Max}{Units.ToString(kellerSensorData.Header.CompensatedPressureRange.Unit)}";
-        textBuilder.AppendLine($"{"pressure range",TextAlignmentDistanceHeader}{pressureRange} ███"); //todo: decide if 'rel' or 'abs' depending on sensor type
+        textBuilder.AppendLine($"{"pressure range",TextAlignmentDistanceHeader}{pressureRange} ███"); //The information whether 'rel' or 'abs' is used when testing is not part in version 1 of the JSON
 
         textBuilder.AppendLine();
 
