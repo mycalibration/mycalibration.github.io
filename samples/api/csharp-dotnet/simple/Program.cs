@@ -10,7 +10,7 @@ namespace myCalibrationAPISimpleSample
 {
   internal class Program
   {
-    private const string PermanentAccessToken = "bqCrDAQABACUKUpXST6JCEgPeStCyeHhfmNz/+yE29F+VbVeKl7eU....  ASK engineering@keller-druck.com for your permanent acces token or look into the profile settings at https://mycalibration.azurewebsites.net/";
+    private const string PermanentAccessToken = "bqCrDAQABACUKUpXST6JCEgPeStCyeHhfmNz/+yE29F+VbVeKl7eU....  ASK engineering@keller-pressure.com for your permanent acces token or look into the profile settings at https://mycalibration.azurewebsites.net/";
     
     static void Main(string[] args)
     {
@@ -54,7 +54,7 @@ namespace myCalibrationAPISimpleSample
         using WebResponse response = e.Response;
         httpResponse = (HttpWebResponse)response;
         Console.WriteLine("Error code: {0}", httpResponse.StatusCode);
-        Console.WriteLine("Request is not successful. Please check your permanent access token or ask engineering@keller-druck.com");
+        Console.WriteLine("Request is not successful. Please check your permanent access token or ask engineering@keller-pressure.com");
         return;
       }
 

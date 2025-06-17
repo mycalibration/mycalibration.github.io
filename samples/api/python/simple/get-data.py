@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 print('Starting...')
-permanentAccessToken = 'bqCrDAQABACUKUpXST6JCEgPeStCyeHhfmNz/+yE29F+VbVeKl7eU....  ASK engineering@keller-druck.com for your permanent acces token or look into the profile settings at https://mycalibration.azurewebsites.net/'
+permanentAccessToken = 'bqCrDAQABACUKUpXST6JCEgPeStCyeHhfmNz/+yE29F+VbVeKl7eU....  ASK engineering@keller-pressure.com for your permanent acces token or look into the profile settings at https://mycalibration.azurewebsites.net/'
 
 baseUrl       = 'https://mycalibrationapi.azurewebsites.net/v1/CalibrationData'
 baseUrlExport = 'https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/Export'

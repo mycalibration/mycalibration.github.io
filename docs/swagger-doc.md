@@ -4,9 +4,9 @@ myCalibration API
 ## Version: 1.22.238.1
 
 **Contact information:**  
-KELLER Druckmesstechnik AG 
+KELLER Pressure
 https://mycalibration.azurewebsites.net/  
-engineering@keller-druck.com  
+engineering@keller-pressure.com  
 
 ### /v1/Profile
 

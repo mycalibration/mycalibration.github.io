@@ -57,7 +57,7 @@ There is a free demo user account with the username '*Demo1234*' and the passwor
 
 ### Sign Up & Sign In
 
-Signing up a user account can be done with the help of engineering@keller-druck.com
+Signing up a user account can be done with the help of engineering@keller-pressure.com
 There is already a free demo account '**Demo1234**' with the password '**Demo1234**' to see some demo data.  
 
 ![login example](./media/login-demo1234.png?raw=true)
@@ -123,7 +123,7 @@ Get a list of all data that is stored in myCalibration after given datetime ***s
 
 ### PUT /v1/CalibrationData/New
 
-WARNING: Only use when you know what you do. Better ask engineering@keller-druck.com
+WARNING: Only use when you know what you do. Better ask engineering@keller-pressure.com
 Gathers all NEW data. 'New data' is calibration data that was never requested with this request. A second request might return an empty list.
 Optionally, if the new data could not be stored, then with 'countOfHoursDataWasAlreadyRequested' the data requested will be shown again back to the given hours.
 Optionally, 'countOfHoursDataWasAlreadyAssigned' can be used
@@ -340,7 +340,7 @@ In the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/i
 
 #### Permanent Access Token
 
-As of now, you have to request the the Permanent Access Token directly from KELLER's myCalibration Support Team : <engineering@keller-druck.com>  
+As of now, you have to request the the Permanent Access Token directly from KELLER's myCalibration Support Team : <engineering@keller-pressure.com>  
 
 The provided access token must be the value with the key 'userOid' in the header of every request. This way a bearer token and the OAuth 2 flow is NOT needed anymore.
 ![Using the Permanent Access Token](./media/permanent-access-token-postman.png)
@@ -762,7 +762,7 @@ The converter was build as a proof-of-concept in order to show that nearly all i
 - ***Where do I get a permanent access token from to access the API?***  
  The temporary and permanent access token can be seen in the web app under "Profile Settings" which can be found with the button of the company name.  
  There is always the temporary access token that can be used for the [Swagger/OpenAPI UI](https://mycalibrationapi.azurewebsites.net/swagger/index.html).  
- If the permanent access token is not visible for you then you might need to be given the needed authorization from engineering@keller-druck.com. Ask for an permanent access token.
+ If the permanent access token is not visible for you then you might need to be given the needed authorization from engineering@keller-pressure.com. Ask for an permanent access token.
 
  - ***How do I USE the permanent access token access the API?***  
  See [Accessing the API with the Permanent Access Token](#accessing-the-api-with-the-permanent-access-token)

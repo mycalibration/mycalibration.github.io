@@ -15,7 +15,7 @@ To build, you need
 - .NET6 SDK
 - Access to Nuget for the two needed Nuget-packages
 
-To use it, you need to be a registrated KELLER myCalibration user and a Permanent Access Token (available from engineering@keller-druck.com)
+To use it, you need to be a registrated KELLER myCalibration user and a Permanent Access Token (available from engineering@keller-pressure.com)
 
 If you do not want to install .NET6 runtime, and do not want to build it, then use this self-contained executable:
 https://github.com/mycalibration/mycalibration.github.io/releases/download/Windows-Forms-Sample-App-V-1/WindowsFormsSampleMyCalibration-win-x64.zip

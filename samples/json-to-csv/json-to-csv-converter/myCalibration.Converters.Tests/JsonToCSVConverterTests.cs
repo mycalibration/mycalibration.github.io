@@ -12,8 +12,8 @@ namespace myCalibration.Converters.Tests
         
 
         string fail1JsonText = File.ReadAllText(Path.Combine("sample-files","problematic", "100645.0234_R176529_2024-05-31.json"));
-        string fail2JsonText = File.ReadAllText(Path.Combine("sample-files","problematic", "112010.0658_1375164_2022-07-06.json"));
-        string fail3JsonText = File.ReadAllText(Path.Combine("sample-files","problematic", "P044457", "100910.0793_P044457_2022-03-16.json"));
+        string fail2JsonText = File.ReadAllText(Path.Combine("sample-files","problematic", "100810.0287_B825694_2024-06-05_0212.json"));
+        string fail3JsonText = File.ReadAllText(Path.Combine("sample-files","problematic", "101035.0277_15360_2023-07-27.json"));
 
         string example1CoefficientTxtText  = File.ReadAllText(Path.Combine("sample-files", "0141TIGR5.txt"));
         string example1MeasurementsTxtText = File.ReadAllText(Path.Combine("sample-files", "0141TIGR5_Testrun.txt"));
