@@ -740,7 +740,7 @@ This might happen when a sensor is send back to us for reparation or re-calibrat
 Instead of ```GET https://mycalibrationapi.azurewebsites.net/v1/CalibrationData``` to get ALL data, use ```PUT https://mycalibrationapi.azurewebsites.net/v1/CalibrationData/New``` to get only the newest data not requested before. This request will mark the data as 'requested' and will not be returned again with the next ```PUT``` request. Except when using the optional parameters ```countOfHoursDataWasAlreadyRequested``` or ```countOfHoursDataWasAlreadyAssigned``` which can again override the 'requested' state for a given time span.  
  
 - ***Where can I see the Terms & Conditions?***  
-[TermsAndConditions_Nutzungsbedingungen_2022.pdf]<https://prodspakellercloud.blob.core.windows.net/mycalibration/assets/myCalibration_TermsAndConditions_Nutzungsbedingungen_2022.pdf>  
+[myCalibration Terms and Conditions](https://download.keller-pressure.com/api/download/uQYYFTYxSVACfwAHfR7CQ3/en/2025-04.pdf)   
 
 - ***I tried the converter. It does not give me the 1:1 data as the TXT file I am used to. Why?***  
 The converter was build as a proof-of-concept in order to show that nearly all information in the TXT/CSV files are also stored in the JSON file. It is not meant as a 1:1 conversion and should not be used in production.
