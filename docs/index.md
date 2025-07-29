@@ -10,6 +10,7 @@ Table of Contents
    [5) Sample Software](#5-sample-software)  
    [6) FAQ](#6-faq)  
    [7) Roadmap](#7-roadmap)  
+   [8) Release Notes](#8-release-notes)
 
 ---
 
@@ -775,3 +776,7 @@ The converter was build as a proof-of-concept in order to show that nearly all i
 - Description of new "Pressure Line Dependency"remark  
 
 ---
+
+## 8) Release Notes
+
+See [Release Notes](https://mycalibration.github.io/release-notes)  

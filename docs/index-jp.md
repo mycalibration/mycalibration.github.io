@@ -10,6 +10,7 @@
 5. [サンプルソフトウェア](#5-サンプルソフトウェア)
 6. [よくある質問（FAQ）](#6-よくある質問faq)
 7. [ロードマップ](#7-ロードマップ)
+8. [リリースノート](#8-リリースノート)
 
 ---
 
@@ -533,3 +534,7 @@ Githubリポジトリ: [https://github.com/mycalibration/mycalibration.github.io
 - 新しい「Pressure Line Dependency」説明追加  
 
 ---
+
+## 8. リリースノート
+
+[リリースノート](https://mycalibration.github.io/release-notes) をご覧ください。
