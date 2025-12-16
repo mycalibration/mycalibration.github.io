@@ -57,8 +57,9 @@ There is a free demo user account with the username '*Demo1234*' and the passwor
 
 ### Sign Up & Sign In
 
-Signing up a user account can be done with the help of engineering@keller-pressure.com
-There is already a free demo account '**Demo1234**' with the password '**Demo1234**' to see some demo data.  
+Signing up a user account can be done by pressing the [**Sign Up**] and following the instructions. A *user name*, an *email address* and *accepting the 'Terms & Condition'* is necessary.  
+
+For just testing out myCalibration without a signing up an account can be done with a free demo account '**Demo1234**' with the password '**Demo1234**' in order to see some demo data.  
 
 ![login example](./media/login-demo1234.png?raw=true)
 
