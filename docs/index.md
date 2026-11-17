@@ -367,6 +367,8 @@ Here an example in C#:
 
 ## 4) The JSON Schema
 
+
+### 4.1) Overview
 The schema can be downloaded as JSON Schema [here](https://github.com/mycalibration/mycalibration.github.io/blob/main/schema/keller-sensor-data.schema.json). And converted to various other file types [here](https://editor.swagger.io/).
 
 | Root objects |  Explanation |
@@ -657,6 +659,297 @@ The schema can be downloaded as JSON Schema [here](https://github.com/mycalibrat
   </tr>
 </tbody>
 </table>
+
+---
+
+### 4.2) Special fields
+
+This chapter provides detailed explanations of the special fields in the JSON data structure, organized by main sections: Version, Header, Measurement, and CompensationMethods.
+
+#### 4.2.1) Version
+
+The **version** field contains the version string for the schema with semantic versioning (MAJOR.MINOR.PATCH), e.g., "1.0.0".
+
+![Version](./newparts/image-20250715-131339.png)
+
+#### 4.2.2) Header
+
+The **header** object contains meta-information to identify and catalog the calibration data stored in the measurements.
+
+![Header](./newparts/image-20250715-131506.png)
+
+##### 4.2.2.1) creationDate, orderTargetDispatchDate, orderNumber, orderPosition
+
+Basic order and identification information:
+
+- **creationDate**: File creation date (format: "YYYY-MM-DD")
+- **orderTargetDispatchDate**: Targeted dispatch date of the order
+- **orderNumber**: KELLER purchase order number
+- **orderPosition**: KELLER purchase order position
+
+![Header Basic Fields](./newparts/image-20250715-132037.png)
+
+##### 4.2.2.2) customerOrderNumber, customerReferenceNumber, customerProductType
+
+Customer-specific identification fields:
+
+- **customerOrderNumber**: Customer internal purchase order number
+- **customerReferenceNumber**: Customer internal reference number
+- **customerProductType**: Customer internal product type
+
+![Customer Fields](./newparts/image-20250715-132100.png)
+
+##### 4.2.2.3) pressureType, productSeries, productType, productNumber, serialNumber
+
+Product identification fields:
+
+- **pressureType**: Type of pressure measurement (e.g., "PA", "PAA", "PR", "PRD", "PD")
+- **productSeries**: KELLER product series (e.g., "33X", "10LHP", "25Y")
+- **productType**: KELLER product type (e.g., "PAA-33X")
+- **productNumber**: KELLER product number
+- **serialNumber**: KELLER product serial number (unique identifier)
+
+![Product Fields](./newparts/image-20250715-132823.png)
+
+##### 4.2.2.4) compensatedPressureRange
+
+The **compensatedPressureRange** object defines the pressure range over which the sensor's characteristics have been compensated.
+
+Structure:
+- **min**: Minimum pressure value
+- **max**: Maximum pressure value
+- **unit**: Pressure unit (e.g., "bar", "Pa", "psi")
+
+Example: `{"min": 0.0, "max": 1.0, "unit": "bar"}`
+
+![Compensated Pressure Range](./newparts/image-20250715-140227.png)
+
+##### 4.2.2.5) compensatedTemperatureRange
+
+The **compensatedTemperatureRange** object defines the temperature range over which the sensor's characteristics have been compensated.
+
+Structure:
+- **min**: Minimum temperature value
+- **max**: Maximum temperature value
+- **unit**: Temperature unit (e.g., "°C", "K")
+
+Example: `{"min": 15.0, "max": 70.0, "unit": "°C"}`
+
+![Compensated Temperature Range](./newparts/image-20250715-142201.png)
+
+##### 4.2.2.6) electricSupply
+
+The **electricSupply** object defines the nominal electric supply characteristics. It can be specified in two different ways:
+
+**Option 1 - Range specification:**
+- **min**: Minimum supply value
+- **max**: Maximum supply value
+- **unit**: Supply unit (e.g., "V", "VDC")
+
+Example: `{"min": 4.5, "max": 24.0, "unit": "V"}`
+
+**Option 2 - Magnitude specification:**
+- **magnitude**: Supply magnitude value
+- **unit**: Supply unit (e.g., "mA")
+
+Example: `{"magnitude": 1.0, "unit": "mA"}`
+
+![Electric Supply](./newparts/image-20250715-142239.png)
+
+##### 4.2.2.7) remarks, customerName, customerNumber
+
+Additional metadata fields:
+
+- **remarks**: Optional remarks or notes
+- **customerName**: Customer name
+- **customerNumber**: KELLER customer identification number
+
+![Additional Header Fields](./newparts/image-20250715-142441.png)
+
+#### 4.2.3) Measurement
+
+The **measurements** array contains individual measurement points from the calibration process. Each measurement represents a calibration point with specific environmental conditions and measured values.
+
+![Measurements Array](./newparts/image-20250715-143445.png)
+
+##### 4.2.3.1) reference
+
+The **reference** field contains KELLER's internal reference to the original measurement data, providing traceability to calibration records.
+
+Example: `"TSX_ABCD567P89"`
+
+![Measurement Reference](./newparts/image-20250715-143458.png)
+
+##### 4.2.3.2) environment
+
+The **environment** object contains the actual (real) conditions during the measurement:
+
+**Subfields:**
+- **pressure**: Object with `magnitude` and `unit`
+- **temperature**: Object with `magnitude` and `unit`
+- **barometer**: Object with `magnitude` and `unit` (atmospheric pressure)
+
+Example:
+```json
+{
+  "pressure": {"magnitude": 0.1000031, "unit": "bar"},
+  "temperature": {"magnitude": 14.6304, "unit": "°C"},
+  "barometer": {"magnitude": 0.970963, "unit": "bar"}
+}
+```
+
+![Environment](./newparts/image-20250715-145518.png)
+
+##### 4.2.3.3) environmentTarget
+
+The **environmentTarget** object contains the target (intended) conditions for the measurement point:
+
+**Subfields:**
+- **pressure**: Object with `magnitude` and `unit`
+- **temperature**: Object with `magnitude` and `unit`
+
+Example:
+```json
+{
+  "pressure": {"magnitude": 0.1, "unit": "bar"},
+  "temperature": {"magnitude": 15, "unit": "°C"}
+}
+```
+
+The difference between **environment** and **environmentTarget** indicates the deviation from ideal calibration conditions.
+
+![Environment Target](./newparts/image-20250715-150638.png)
+
+##### 4.2.3.4) raw
+
+The **raw** object contains uncompensated, raw measurement values directly from the sensor:
+
+**Subfields:**
+- **bridgeResistance**: Object with `magnitude` (typically in Ohm) and `unit`
+- **signal**: Object with `magnitude` (e.g., mV, mA) and `unit`
+
+Example:
+```json
+{
+  "bridgeResistance": {"magnitude": 3391.10116554, "unit": "Ohm"},
+  "signal": {"magnitude": 24.238461872, "unit": "mV"}
+}
+```
+
+These raw values serve as inputs for compensation calculations.
+
+![Raw Data](./newparts/image-20250701-090752.png)
+
+##### 4.2.3.5) compensated
+
+The **compensated** object contains measurement data after applying compensation methods:
+
+**Structure:**
+- **compensationCircuitOutputs**: Object containing named outputs (e.g., "P1", "TOB1")
+  - Each output has:
+    - **measuredValue**: Object with `magnitude` and `unit` (the compensated calculated value)
+    - **nominalValue**: Object with `magnitude` and `unit` (the expected ideal value)
+
+Example:
+```json
+{
+  "compensationCircuitOutputs": {
+    "P1": {
+      "measuredValue": {"magnitude": 0.03000106, "unit": "bar"},
+      "nominalValue": {"magnitude": 0.02999711, "unit": "bar"}
+    },
+    "TOB1": {
+      "measuredValue": {"magnitude": 14.59302, "unit": "°C"},
+      "nominalValue": {"magnitude": 14.6313, "unit": "°C"}
+    }
+  }
+}
+```
+
+![Compensated Data](./newparts/image-20250701-092117.png)
+
+#### 4.2.4) CompensationMethods
+
+The **compensationMethods** object contains information about different compensation methods used to correct sensor readings.
+
+![Compensation Methods](./newparts/image-20250701-092429.png)
+
+##### 4.2.4.1) mathematicalModel
+
+The **mathematicalModel** object contains one or more mathematical compensation models, each identified by a model type (e.g., "MM0324").
+
+**Each model contains:**
+- **modelType**: Type identifier (e.g., "MM0324")
+- **compensatedPressureRange**: Valid pressure range for this model (object with min, max, unit)
+- **compensatedTemperatureRange**: Valid temperature range for this model (object with min, max, unit)
+- **electricSupply**: Electric supply specification (object with magnitude/unit or min/max/unit)
+- **parts**: Object containing pressure and temperature calculation formulas
+
+![Mathematical Model](./newparts/image-20250701-092715.png)
+
+###### 4.2.4.1.1) parts.pressure
+
+The **pressure** part of the mathematical model contains:
+
+- **description**: Formula description (e.g., "P = f(Sig,R)")
+- **inputs**: Array of input variable names (e.g., ["Sig", "Rb"])
+- **output**: Output variable name (e.g., "P")
+- **coefficients**: 2D array of polynomial coefficients
+
+The coefficients are used in polynomial equations to calculate compensated pressure from raw sensor values.
+
+![Pressure Coefficients](./newparts/image-20250701-094426.png)
+
+###### 4.2.4.1.2) parts.temperature
+
+The **temperature** part of the mathematical model contains:
+
+- **description**: Formula description (e.g., "T = f(R,Sig)")
+- **inputs**: Array of input variable names (e.g., ["Rb", "Sig"])
+- **output**: Output variable name (e.g., "T")
+- **coefficients**: 2D array of polynomial coefficients
+
+The coefficients are used in polynomial equations to calculate compensated temperature from raw sensor values.
+
+![Temperature Coefficients](./newparts/image-20250701-094549.png)
+
+##### 4.2.4.2) compensationCircuit
+
+The **compensationCircuit** object describes the compensation circuit configuration:
+
+**Structure:**
+- **description**: Description or identifier of the compensation circuit (often contains the product number)
+- **outputs**: Object containing named output channels
+  - Each output has a **description** field explaining what it represents (e.g., "Pressure 1", "Temperature 1")
+
+The output names (e.g., "P1", "TOB1") correspond to the names used in the **compensated** section of measurements.
+
+Example:
+```json
+{
+  "description": "5432109.0004",
+  "outputs": {
+    "P1": {"description": "Pressure 1"},
+    "TOB1": {"description": "Temperature 1"}
+  }
+}
+```
+
+![Compensation Circuit](./newparts/image-20250701-100308.png)
+
+#### 4.2.5) Complete Structure Overview
+
+The following diagram shows how all these fields work together in the complete JSON structure:
+
+![Complete Structure](./newparts/image-20250701-100854.png)
+
+The data flows from:
+1. **Raw sensor readings** (bridgeResistance, signal)
+2. Through **compensation methods** (mathematical models with coefficients)
+3. To produce **compensated outputs** (pressure and temperature values)
+4. Which are validated against **nominal values**
+
+![Data Flow](./newparts/image-20250701-100908.png)
 
 ---
 
